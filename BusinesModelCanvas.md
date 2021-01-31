@@ -39,10 +39,9 @@ the university policy on covid to help with mitigation.
 
 ### Channel Phases: 
 1. Awareness: Sending out emails to students and staff about the new covid checker
-2 Evaluation: Send out a feedback form to students and staff. We could also send out any updates with changes we made to the checker and send out updates
+2. Evaluation: Send out a feedback form to students and staff. We could also send out any updates with changes we made to the checker and send out updates
   on the number of cases reported.
-3. After Sales:
-Have an F&Q section on the website
+3. After Sales: Have an F&Q section on the website
 
 ### Customer Segments:
 1. the University as a whole but really the students as it would make them feel safer knowing how many cases are on the university.
