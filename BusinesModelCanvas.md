@@ -4,7 +4,9 @@
 
 ### Key partners:
 1.The University faculty/staff
+
 2.The students of the university
+
 3.School board
 
 ### Key activites partners perform:
