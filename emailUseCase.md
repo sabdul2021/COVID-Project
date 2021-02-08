@@ -28,4 +28,4 @@ app.get('/', (req, res) => {
 - There will be changes and improves from here on out. Those changes will reflect how the UI will function later on for sending email to students and staffs around
 campus.
 
-![USE](VIEWS/img/case.jpg)
+![USE](views/img/case.jpg)
