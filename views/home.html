@@ -25,5 +25,70 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<div id="container">
+  <center>
+    <div id="content">
+      <div id="main">
+        <div id="page1">
+          <p id="instructions">
+              Please answer the following questions as truthfully as possible
+              in order to ensure the numbers and data collected can be as accurate, and free of error as possbile.
+              <br>
+              We wish you are staying safe, social distancing, and wearing a mask!
+            </p>
+            <br>
+      <div id="updateForm">
+          <h1 id="formhead">Covid Checker</h1>
+                Fields with * are required.<br><br>
+                <label>Student ID No.*<input type="text" name="STUDENT_ID" id="STUDENT_ID"/></label>
+                <br>
+                <label>Name (Last , First)<input type="text" name="name" id="name"/></label>
+                <br>
+                <label>Email (University Email)<input type="text" name="email" id="email"/></label>
+                <br>
+                <label>1. Have you been exposed to covid within the past 14 days:  <input id="Yes_Exposed" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
+                <br>
+                <label>2. Have you been tested positive for covid within the past 14 days:  <input id="Yes_Exposed" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
+                <br>
+                <!--future iteration: make this a drop down with a checkbox selector inside. -->
+                  <label>3. What coronavirus symptoms are you currently experiencing if any?</label>
+                  <select id="symptom">
+                      <option value=""></option>
+                      <option value="1">fever or chills</option>
+                      <option value="2">cough</option>
+                      <option value="3">shortness of breath / difficulty breathing</option>
+                      <option value="4">fatigue</option>
+                      <option value="5">new loss of taste or smell</option>
+                      <option value="6">muscle or body aches</option>
+                      <option value="7">chest pain</option>
+                    </select>
+                <br>
+                <label>4. Are you currently self quarantining?</label>
+                <select id="quarantine">
+                    <option value=""></option>
+                    <option value="1">yes, due to feeling slight symptoms</option>
+                    <option value="2">yes, due to being into contact with someone with covid</option>
+                    <option value="3">yes, due to traveling out of state/country</option>
+                    <option value="4">no, I am not self quarantining</option>
+                  </select>
+                <br>
+                </div>
+                <br>
+             <input id="submitButton" type="submit" value="Submit" href="javascript:void(0)" onclick=""/>
+           </div>
+          </div>
+        <div id="footer">
+          <center>
+          <i><a href="https://www.pointpark.edu/academics/schools/business/undergraduateprogram/appliedcomputerscience">&copy; Created in the Applied Computer Science Senior Project Course</a></i><br><br>
+        </div>
+      </div>
+      <div id="page2" style="display:none">
+        <table id="invTable" >
+
+          <tr id="tableParent"><th >Food Name</th><th id="colum">Count</th><th id="colum">Food Group</th><th id="colum">Food Type</th>
+          <th id="colum">Desc.</th><th id="colum">Donor</th><th id="colum">Date</th><th id="colum">Notes</th></tr>
+      </table>
+      </div>
+    </div>
 </body>
 </html>
