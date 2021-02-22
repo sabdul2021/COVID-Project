@@ -33,10 +33,10 @@ function serveStaticFile(res, path, contentType, responseCode) {
   if (!responseCode) responseCode = 200;
   if (!contentType) {
     contentType = "application/octet-stream";
-    if (path.endsWith("views/.html")) {
+    if (path.endsWith("views/home.html")) {
       contentType = "text/html; charset=utf-8";
     }
-    else if (path.endsWith("views/js/.js")) {
+    else if (path.endsWith("views/js/main.js")) {
       contentType = "application/javascript; charset=utf-8";
     }
     else if (path.endsWith(".json")) {
@@ -116,7 +116,12 @@ function addUser(req, res) {
   });
   req.on("end", function () {
     var injson = JSON.parse(body);
-    var conn = mysql.createConnection(credentials.connection);
+    var conn = mysql.createConnection({
+    host: "sabdul.it.pointpark.edu",
+    user: "sabdul",
+    password: "7bEuNPU7",
+    database: "COVID_CHECKER"
+  });
     // connect to database
     conn.connect(function(err) {
       if (err) {
