@@ -70,7 +70,7 @@ function sendResponse(req, res, data) {
 
 function users(req, res) {
   var conn = mysql.createConnection({
-      host: "sabdul.it.pointpark.edu",
+      host: "sabdul.it.pointpark.edu:3000",
       user: "sabdul",
       password: "7bEuNPU7",
       database: "COVID_CHECKER"
