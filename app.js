@@ -33,22 +33,22 @@ function serveStaticFile(res, path, contentType, responseCode) {
   if (!responseCode) responseCode = 200;
   if (!contentType) {
     contentType = "application/octet-stream";
-    if (path.endsWith(".html")) {
+    if (path.endsWith("views/.html")) {
       contentType = "text/html; charset=utf-8";
     }
-    else if (path.endsWith(".js")) {
+    else if (path.endsWith("views/js/.js")) {
       contentType = "application/javascript; charset=utf-8";
     }
     else if (path.endsWith(".json")) {
       contentType = "application/json; charset=utf-8";
     }
-    else if (path.endsWith(".css")) {
+    else if (path.endsWith("views/css/.css")) {
       contentType = "text/css; charset=utf-8";
     }
-    else if (path.endsWith(".png")) {
+    else if (path.endsWith("views/img/.png")) {
       contentType = "image/png";
     }
-    else if (path.endsWith(".jpg")) {
+    else if (path.endsWith("views/img/.jpg")) {
       contentType = "text/jpeg";
     }
   }
