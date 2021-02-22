@@ -27,7 +27,7 @@ http.createServer(function(req, res) {
 }).listen(3000);
 
 function serveStaticFile(res, path, contentType, responseCode) {
-  if (!path) path = "/views";
+  if (!path) path = "/home.html";
   if (!responseCode) responseCode = 200;
   if (!contentType) {
     contentType = "application/octet-stream";
