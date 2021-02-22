@@ -40,19 +40,21 @@
       <div id="updateForm">
           <h1 id="formhead">Covid Checker</h1>
                 Fields with * are required.<br><br>
-                <label>Student ID No.*<input type="text" name="STUDENT_ID" id="STUDENT_ID"/></label>
+                <label>Student ID No.*<input type="text" name="student_id" id="student_id"/></label>
                 <br>
-                <label>Name (Last , First)<input type="text" name="name" id="name"/></label>
+                <label>First Name<input type="text" name="name" id="firstName"/></label>
+                <br>
+                <label>Last Name<input type="text" name="name" id="lastName"/></label>
                 <br>
                 <label>Email (University Email)<input type="text" name="email" id="email"/></label>
                 <br>
-                <label>1. Have you been exposed to covid within the past 14 days:  <input id="Yes_Exposed" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
+                <label>1. Have you been exposed to covid within the past 14 days:  <input id="yes_exposed" name="exposure" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
                 <br>
-                <label>2. Have you been tested positive for covid within the past 14 days:  <input id="Yes_Exposed" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
+                <label>2. Have you been tested positive for covid within the past 14 days:  <input id="Yes_Exposed" name="test" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
                 <br>
                 <!--future iteration: make this a drop down with a checkbox selector inside. -->
                   <label>3. What coronavirus symptoms are you currently experiencing if any?</label>
-                  <select id="symptom">
+                  <select id="symptom" name="dropdown1">
                       <option value=""></option>
                       <option value="1">fever or chills</option>
                       <option value="2">cough</option>
@@ -64,7 +66,7 @@
                     </select>
                 <br>
                 <label>4. Are you currently self quarantining?</label>
-                <select id="quarantine">
+                <select id="quarantine" name="dropdown2">
                     <option value=""></option>
                     <option value="1">yes, due to feeling slight symptoms</option>
                     <option value="2">yes, due to being into contact with someone with covid</option>
@@ -74,7 +76,7 @@
                 <br>
                 </div>
                 <br>
-             <input id="submitButton" type="submit" value="Submit" href="javascript:void(0)" onclick=""/>
+             <input id="submit_button" type="submit" value="Submit" href="javascript:void(0)" onclick=""/>
            </div>
           </div>
         <div id="footer">
