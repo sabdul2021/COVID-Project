@@ -4,11 +4,13 @@
   "description": "Creating an COVID-19 webpage project through data and analytics.",
   "main": "index.js",
   "dependencies": {
+    "credential": "^2.0.0",
+    "credentials": "^3.0.2",
     "express": "^4.17.1",
+    "mysql": "^2.18.1",
     "node": "^15.7.0",
     "nodemon": "^2.0.7"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
