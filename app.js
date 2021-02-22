@@ -8,21 +8,19 @@ http.createServer(function(req, res) {
     var path = req.url.replace(/\/?(?:\?.*)?$/, "").toLowerCase();
     if (path === "/users") {
       users(req, res);
-    }
-    else if (path === "/add_user") {
+    } else if (path === "/add_user") {
       addUser(req, res);
-    }
-    else {
+    } else {
       serveStaticFile(res, path);
     }
-  }
-  catch (e) {
+  } catch (e) {
     try {
       console.log("ERROR(500): " + e);
-      res.writeHead(500, {"Content-Type": "text/plain; charset=utf-8"});
+      res.writeHead(500, {
+        "Content-Type": "text/plain; charset=utf-8"
+      });
       res.end("500 Internal Server error");
-    }
-    catch (e) {
+    } catch (e) {
       console.log("ERROR(^^^): " + e);
     }
   }
@@ -33,49 +31,49 @@ function serveStaticFile(res, path, contentType, responseCode) {
   if (!responseCode) responseCode = 200;
   if (!contentType) {
     contentType = "application/octet-stream";
-    if (path.endsWith("views/home.html")) {
+    if (path.endsWith("home.html")) {
       contentType = "text/html; charset=utf-8";
-    }
-    else if (path.endsWith("views/js/main.js")) {
+    } else if (path.endsWith("main.js")) {
       contentType = "application/javascript; charset=utf-8";
-    }
-    else if (path.endsWith(".json")) {
+    } else if (path.endsWith(".json")) {
       contentType = "application/json; charset=utf-8";
-    }
-    else if (path.endsWith("views/css/.css")) {
+    } else if (path.endsWith(".css")) {
       contentType = "text/css; charset=utf-8";
-    }
-    else if (path.endsWith("views/img/.png")) {
+    } else if (path.endsWith(".png")) {
       contentType = "image/png";
-    }
-    else if (path.endsWith("views/img/.jpg")) {
+    } else if (path.endsWith(".jpg")) {
       contentType = "text/jpeg";
     }
   }
   fs.readFile(__dirname + "/views" + path, function(err, data) {
     if (err) {
-      res.writeHead(404, {"Content-Type": "text/plain; charset=utf-8"});
+      res.writeHead(404, {
+        "Content-Type": "text/plain; charset=utf-8"
+      });
       res.end("404 Not Found");
-    }
-    else {
-      res.writeHead(200, {"Content-Type": contentType});
+    } else {
+      res.writeHead(200, {
+        "Content-Type": contentType
+      });
       res.end(data);
     }
   });
 }
 
 function sendResponse(req, res, data) {
-  res.writeHead(200, {"Content-Type": "application/json; charset=utf-8"});
+  res.writeHead(200, {
+    "Content-Type": "application/json; charset=utf-8"
+  });
   res.end(JSON.stringify(data));
 }
 
 function users(req, res) {
   var conn = mysql.createConnection({
-  host: "sabdul.it.pointpark.edu",
-  user: "sabdul",
-  password: "7bEuNPU7",
-  database: "COVID_CHECKER"
-});
+    host: "sabdul.it.pointpark.edu",
+    user: "sabdul",
+    password: "7bEuNPU7",
+    database: "COVID_CHECKER"
+  });
   // connect to database
   conn.connect(function(err) {
     if (err) {
@@ -90,8 +88,7 @@ function users(req, res) {
         // query failed
         outjson.success = false;
         outjson.message = "Query failed: " + err;
-      }
-      else {
+      } else {
         // query successful
         outjson.success = true;
         outjson.message = "Query successful!";
@@ -106,7 +103,7 @@ function users(req, res) {
 
 function addUser(req, res) {
   var body = "";
-  req.on("data", function (data) {
+  req.on("data", function(data) {
     body += data;
     // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
     if (body.length > 1e6) {
@@ -114,14 +111,14 @@ function addUser(req, res) {
       req.connection.destroy();
     }
   });
-  req.on("end", function () {
+  req.on("end", function() {
     var injson = JSON.parse(body);
     var conn = mysql.createConnection({
-    host: "sabdul.it.pointpark.edu",
-    user: "sabdul",
-    password: "7bEuNPU7",
-    database: "COVID_CHECKER"
-  });
+      host: "sabdul.it.pointpark.edu",
+      user: "sabdul",
+      password: "7bEuNPU7",
+      database: "COVID_CHECKER"
+    });
     // connect to database
     conn.connect(function(err) {
       if (err) {
@@ -137,8 +134,7 @@ function addUser(req, res) {
           // query failed
           outjson.success = false;
           outjson.message = "Query failed: " + err;
-        }
-        else {
+        } else {
           // query successful
           outjson.success = true;
           outjson.message = "Query successful!";
@@ -146,15 +142,14 @@ function addUser(req, res) {
         // return json object that contains the result of the query
         sendResponse(req, res, outjson);
       });
-      conn.query("INSERT INTO COVID_SYMPTOMS (universityId, symptoms, exposure, testResults, currentSymptoms, quarantineStatus) VALUE (?)", [injson.name], function(err, rows, fields){
+      conn.query("INSERT INTO COVID_SYMPTOMS (universityId, symptoms, exposure, testResults, currentSymptoms, quarantineStatus) VALUE (?)", [injson.name], function(err, rows, fields) {
         // build json result object
         var outjson = {};
         if (err) {
           // query failed
           outjson.success = false;
           outjson.message = "Query failed: " + err;
-        }
-        else {
+        } else {
           // query successful
           outjson.success = true;
           outjson.message = "Query successful!";
