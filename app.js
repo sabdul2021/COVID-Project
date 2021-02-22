@@ -69,12 +69,7 @@ function sendResponse(req, res, data) {
 }
 
 function users(req, res) {
-  var conn = mysql.createConnection({
-      host: "sabdul.it.pointpark.edu:3000",
-      user: "sabdul",
-      password: "7bEuNPU7",
-      database: "COVID_CHECKER"
-    });
+  var conn = mysql.createConnection(credentials.connection);
   // connect to database
   conn.connect(function(err) {
     if (err) {
@@ -114,12 +109,7 @@ function addUser(req, res) {
   });
   req.on("end", function() {
     var injson = JSON.parse(body);
-    var conn = mysql.createConnection({
-    host: "sabdul.it.pointpark.edu",
-    user: "sabdul",
-    password: "7bEuNPU7",
-    database: "COVID_CHECKER"
-  });
+    var conn = mysql.createConnection(credentials.connection);
     // connect to database
     conn.connect(function(err) {
       if (err) {
