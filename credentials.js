@@ -1,4 +1,4 @@
-export default {
+module.exports {
   connection: {
     host     : "db.it.pointpark.edu",
     user     : "covidchecker",
