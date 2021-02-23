@@ -1,4 +1,4 @@
-module.exports {
+module.exports = {
   connection: {
     host     : "db.it.pointpark.edu",
     user     : "covidchecker",
