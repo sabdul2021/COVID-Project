@@ -1,8 +1,8 @@
-module.exports = {
+export default {
   connection: {
-    host     : "sabdul.it.pointpark.edu",
-    user     : "sabdul",
-    password : "7bEuNPU6",
-    database : "Covid_Checker"
+    host     : "db.it.pointpark.edu",
+    user     : "covidchecker",
+    password : "covidchecker",
+    database : "covidchecker"
   }
 };
