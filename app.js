@@ -73,7 +73,7 @@ function users(req, res) {
   // connect to database
   conn.connect(function(err) {
     if (err) {
-      console.error("ERROR: cannot connect: " + e);
+      console.error("ERROR: cannot connect: " + err);
       return;
     }
     // query the database
