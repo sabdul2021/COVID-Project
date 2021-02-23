@@ -2,7 +2,7 @@ var http = require("http");
 var fs = require("fs");
 var mysql = require("mysql");
 var qs = require("querystring");
-var credentials = require("views/js/credentials.js");
+var credentials = require("./credentials");
 
 http.createServer(function(req, res) {
   try {
