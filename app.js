@@ -120,7 +120,7 @@ function addUser(req, res) {
       }
       // query the database
       //conn.query("INSERT INTO USERS (NAME) VALUE ('" + injson.name + "')", function(err, rows, fields) {
-      conn.query("INSERT INTO STUDENT_STAFF (universityId, firstName, lastName, email, symptoms, exposure, testResult, quarantineStatus) VALUE (?)", [injson.name], function(err, rows, fields) {
+      conn.query("INSERT INTO STUDENT_STAFF (universityId, firstName, lastName, email, symptoms, exposure, testResult, quarantineStatus) VALUE (?, ?, ?, ?, ?, ?, ?, ?)", [injson.name], function(err, rows, fields) {
         // build json result object
         var outjson = {};
         if (err) {
