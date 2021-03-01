@@ -34,6 +34,8 @@ function serveStaticFile(res, path, contentType, responseCode) {
     contentType = "application/octet-stream";
     if (path.endsWith("home.html")) {
       contentType = "text/html; charset=utf-8";
+    } else if (path.endsWith("about.html")){
+      contentType = "text/html; charset=utf-8";
     } else if (path.endsWith(".js")) {
       contentType = "application/javascript; charset=utf-8";
     } else if (path.endsWith(".json")) {
@@ -93,6 +95,22 @@ function users(req, res) {
       // return json object that contains the result of the query
       sendResponse(req, res, outjson);
     });
+    conn.query("SELECT * FROM COVID_SYMPTOMS", function(err, rows, fields) {
+      // build json result object
+      var outjson = {};
+      if (err) {
+        // query failed
+        outjson.success = false;
+        outjson.message = "Query failed: " + err;
+      } else {
+        // query successful
+        outjson.success = true;
+        outjson.message = "Query successful!";
+        outjson.data = rows;
+      }
+      // return json object that contains the result of the query
+      sendResponse(req, res, outjson);
+    });
     conn.end();
   });
 }
@@ -118,7 +136,7 @@ function addUser(req, res) {
       }
       // query the database
       //conn.query("INSERT INTO USERS (NAME) VALUE ('" + injson.name + "')", function(err, rows, fields) {
-      conn.query("INSERT INTO STUDENT_STAFF (universityId, firstName, lastName, email, exposure, testResult, fever, cough, fatigue, chestPain, lostOfTaste) VALUE (?)", [injson.name], function(err, rows, fields) {
+      conn.query("INSERT INTO STUDENT_STAFF (universityId, firstName, lastName, email) VALUE (?)", [injson.name], function(err, rows, fields) {
         // build json result object
         var outjson = {};
         if (err) {
@@ -134,6 +152,21 @@ function addUser(req, res) {
         sendResponse(req, res, outjson);
       });
 
+      conn.query("INSERT INTO COVID_SYMPTOMS (universityId, symptoms, exposure, testResult, quarantineStatus) VALUE (?)", [injson.name], function(err, rows, fields) {
+        // build json result object
+        var outjson = {};
+        if (err) {
+          // query failed
+          outjson.success = false;
+          outjson.message = "Query failed: " + err;
+        } else {
+          // query successful
+          outjson.success = true;
+          outjson.message = "Query successful!";
+        }
+        // return json object that contains the result of the query
+        sendResponse(req, res, outjson);
+      });
       conn.end();
     });
   });

@@ -33,6 +33,9 @@ $(function() {
     var lastName = $("#lastName").val();
     var email = $("#email").val();
     var exposure = $('input[name="exposure"]:checked').val();
+    var testResult = $('input[name="test"]:checked').val();
+    var symptoms = $('input[name="exampleRadios"]:checked').val();
+    var quarantineStatus = $('input[name="status"]:checked').val();
     // more to added
     $.ajax({
       type: "POST",
@@ -41,7 +44,11 @@ $(function() {
         student_id: student_id,
         firstName: firstName,
         lastName: lastName,
-        email: email
+        email: email,
+        exposure: exposure,
+        testResult: testResult,
+        symptoms: symptoms,
+        quarantineStatus: quarantineStatus
       }),
       success: function(json) {
         //console.log(JSON.stringify(json));
