@@ -28,7 +28,7 @@ $(function() {
   showUsers();
 
   $("#submit_button").click(function() {
-    var student_id = $("#InputID").val();
+    var universityId = $("#InputID").val();
     // date functionality added
     var today = new Date();
     var dd = ("0" + (today.getDate())).slice(-2);
@@ -49,7 +49,7 @@ $(function() {
       type: "POST",
       url: "add_user",
       data: JSON.stringify({
-        student_id: student_id,
+        universityId: universityId,
         today: today,
         firstName: firstName,
         lastName: lastName,
