@@ -29,12 +29,14 @@ $(function() {
 
   $("#submit_button").click(function() {
     var student_id = $("#InputID").val();
+    // date functionality added
     var today = new Date();
     var dd = ("0" + (today.getDate())).slice(-2);
     var mm = ("0" + (today.getMonth() +　1)).slice(-2);
     var yyyy = today.getFullYear();
     today = yyyy + '-' + mm + '-' + dd ;
     $("#todays-date").attr("value", today);
+    // ends with selected date
     var firstName = $("#InputFirstName1").val();
     var lastName = $("#InputLastName1").val();
     var email = $("#InputEmail1").val();
