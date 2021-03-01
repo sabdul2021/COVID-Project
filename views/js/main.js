@@ -32,10 +32,10 @@ $(function() {
     var firstName = $("#InputFirstName1").val();
     var lastName = $("#InputLastName1").val();
     var email = $("#InputEmail1").val();
-    var exposure = $('input[name="exposure"]:checked').val();
-    var testResult = $('input[name="test"]:checked').val();
-    var symptoms = $('input[name="exampleRadios"]:checked').val();
-    var quarantineStatus = $('input[name="status"]:checked').val();
+    var exposure = $('input[name="exposure"]:unchecked').val();
+    var testResult = $('input[name="test"]:unchecked').val();
+    var symptoms = $('input[name="exampleRadios"]:unchecked').val();
+    var quarantineStatus = $('input[name="status"]:unchecked').val();
     // more to added
     $.ajax({
       type: "POST",

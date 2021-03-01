@@ -95,22 +95,6 @@ function users(req, res) {
       // return json object that contains the result of the query
       sendResponse(req, res, outjson);
     });
-    conn.query("SELECT * FROM STUDENT_STAFF", function(err, rows, fields) {
-      // build json result object
-      var outjson = {};
-      if (err) {
-        // query failed
-        outjson.success = false;
-        outjson.message = "Query failed: " + err;
-      } else {
-        // query successful
-        outjson.success = true;
-        outjson.message = "Query successful!";
-        outjson.data = rows;
-      }
-      // return json object that contains the result of the query
-      sendResponse(req, res, outjson);
-    });
     conn.end();
   });
 }
@@ -136,23 +120,7 @@ function addUser(req, res) {
       }
       // query the database
       //conn.query("INSERT INTO USERS (NAME) VALUE ('" + injson.name + "')", function(err, rows, fields) {
-      conn.query("INSERT INTO STUDENT_STAFF (universityId, firstName, lastName, email) VALUE (?)", [injson.name], function(err, rows, fields) {
-        // build json result object
-        var outjson = {};
-        if (err) {
-          // query failed
-          outjson.success = false;
-          outjson.message = "Query failed: " + err;
-        } else {
-          // query successful
-          outjson.success = true;
-          outjson.message = "Query successful!";
-        }
-        // return json object that contains the result of the query
-        sendResponse(req, res, outjson);
-      });
-
-      conn.query("INSERT INTO COVID_SYMPTOMS (universityId, symptoms, exposure, testResult, quarantineStatus) VALUE (?)", [injson.name], function(err, rows, fields) {
+      conn.query("INSERT INTO STUDENT_STAFF (universityId, firstName, lastName, email, symptoms, exposure, testResult, quarantineStatus) VALUE (?)", [injson.name], function(err, rows, fields) {
         // build json result object
         var outjson = {};
         if (err) {
