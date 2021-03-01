@@ -63,42 +63,6 @@ function serveStaticFile(res, path, contentType, responseCode) {
   });
 }
 
-function serveStaticAboutFile(res, path, contentType, responseCode) {
-  if (!path) path = "/about.html";
-  if (!responseCode) responseCode = 200;
-  if (!contentType) {
-    contentType = "application/octet-stream";
-    if (path.endsWith("about.html")) {
-      contentType = "text/html; charset=utf-8";
-    } else if (path.endsWith("home.html")){
-      contentType = "text/html; charset=utf-8";
-    } else if (path.endsWith(".js")) {
-      contentType = "application/javascript; charset=utf-8";
-    } else if (path.endsWith(".json")) {
-      contentType = "application/json; charset=utf-8";
-    } else if (path.endsWith(".css")) {
-      contentType = "text/css; charset=utf-8";
-    } else if (path.endsWith(".png")) {
-      contentType = "image/png";
-    } else if (path.endsWith(".jpg")) {
-      contentType = "text/jpeg";
-    }
-  }
-  fs.readFile(__dirname + "/views" + path, function(err, data) {
-    if (err) {
-      res.writeHead(404, {
-        "Content-Type": "text/plain; charset=utf-8"
-      });
-      res.end("404 Not Found");
-    } else {
-      res.writeHead(200, {
-        "Content-Type": contentType
-      });
-      res.end(data);
-    }
-  });
-}
-
 function sendResponse(req, res, data) {
   res.writeHead(200, {
     "Content-Type": "application/json; charset=utf-8"
@@ -131,7 +95,7 @@ function users(req, res) {
       // return json object that contains the result of the query
       sendResponse(req, res, outjson);
     });
-    conn.query("SELECT * FROM COVID_SYMPTOMS", function(err, rows, fields) {
+    conn.query("SELECT * FROM STUDENT_STAFF", function(err, rows, fields) {
       // build json result object
       var outjson = {};
       if (err) {
