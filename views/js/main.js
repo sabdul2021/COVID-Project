@@ -28,10 +28,10 @@ $(function() {
   showUsers();
 
   $("#submit_button").click(function() {
-    var student_id = $("#student_id").val();
-    var firstName = $("#firstName").val();
-    var lastName = $("#lastName").val();
-    var email = $("#email").val();
+    var student_id = $("#InputID").val();
+    var firstName = $("#InputFirstName1").val();
+    var lastName = $("#InputLastName1").val();
+    var email = $("#InputEmail1").val();
     var exposure = $('input[name="exposure"]:checked').val();
     var testResult = $('input[name="test"]:checked').val();
     var symptoms = $('input[name="exampleRadios"]:checked').val();
