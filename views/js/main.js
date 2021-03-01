@@ -43,7 +43,7 @@ $(function() {
       url: "add_user",
       data: JSON.stringify({
         student_id: student_id,
-        currentDate: currentDate,
+        currentDate: new Date(),
         firstName: firstName,
         lastName: lastName,
         email: email,
