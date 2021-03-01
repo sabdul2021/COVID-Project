@@ -29,6 +29,7 @@ $(function() {
 
   $("#submit_button").click(function() {
     var student_id = $("#InputID").val();
+    var currentDate = new Date();
     var firstName = $("#InputFirstName1").val();
     var lastName = $("#InputLastName1").val();
     var email = $("#InputEmail1").val();
@@ -42,6 +43,7 @@ $(function() {
       url: "add_user",
       data: JSON.stringify({
         student_id: student_id,
+        currentDate: currentDate,
         firstName: firstName,
         lastName: lastName,
         email: email,
