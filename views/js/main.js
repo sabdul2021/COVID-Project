@@ -29,7 +29,12 @@ $(function() {
 
   $("#submit_button").click(function() {
     var student_id = $("#InputID").val();
-    var currentDate = new Date();
+    var today = new Date();
+    var dd = ("0" + (today.getDate())).slice(-2);
+    var mm = ("0" + (today.getMonth() +　1)).slice(-2);
+    var yyyy = today.getFullYear();
+    today = yyyy + '-' + mm + '-' + dd ;
+    $("#todays-date").attr("value", today);
     var firstName = $("#InputFirstName1").val();
     var lastName = $("#InputLastName1").val();
     var email = $("#InputEmail1").val();
@@ -43,7 +48,7 @@ $(function() {
       url: "add_user",
       data: JSON.stringify({
         student_id: student_id,
-        currentDate: new Date(),
+        today: today,
         firstName: firstName,
         lastName: lastName,
         email: email,
