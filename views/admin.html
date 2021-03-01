@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+<center><h2>Admin Panel</h2>
+
+  <br>
+  <p>The data has been updated for the following visualizations</p>
+
+<div class="row">
+  <div class="column" style="background-color:#aaa;">
+    <h2>Quick Glance Metrics</h2>
+    <p>Total active cases, total exposed, total quarantine</p>
+<p>Rationale: Grab a snapshot of quick data points that can be used for
+university admin/stakeholders communication, or even for meetings to discuss mitigation strategy.  </p>
+  </div>
+  <div class="column" style="background-color:#bbb;">
+    <h2>“What is the [date dimension] total of exposed students/faculty”</h2>
+    <p>Date dimension - day, week, month, quarter, year</p>
+    <p>Metrics - Timeseries of the total of exposed students over time for the selected dimension</p>
+    <p>Ways to visualize:
+Total active cases - time series (line chart)
+Timeseries - student vs staff cases (bar chart)
+</p>
+  </div>
+  <div class="column" style="background-color:#ccc;">
+    <h2>“What are the most prevalent symptoms experienced”</h2>
+    <p>Opportunity to do a bar chart, or some type of visualization where (word cloud)</p>
+  </div>
+  <div class="column" style="background-color:#ddd;">
+    <h2>What is the exposure/test ratio?</h2>
+    <p>Sum of students&faculty exposed / students&faculty tested positive for covid</p>
+  </div>
+</div>
+
+</body>
+</html>
