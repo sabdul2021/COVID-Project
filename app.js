@@ -34,7 +34,7 @@ function serveStaticFile(res, path, contentType, responseCode) {
     contentType = "application/octet-stream";
     if (path.endsWith("home.html")) {
       contentType = "text/html; charset=utf-8";
-    } else if (path.endsWith("about.html")){
+    } else if (path.endsWith(".html")){
       contentType = "text/html; charset=utf-8";
     } else if (path.endsWith(".js")) {
       contentType = "application/javascript; charset=utf-8";
