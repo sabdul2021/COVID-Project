@@ -96,25 +96,45 @@
           </form>
 
          <label>3. What coronavirus symptoms are you currently experiencing if any? Please check the symptom you are experiencing. </label>
-          <form action="/action_page.php">
-            <input type="checkbox" id="symptom1" name="symptom1" value="Fever">
-            <label for="symptom1"> Fever</label><br>
-            <input type="checkbox" id="symptom2" name="symptom2" value="Chills">
-            <label for="symptom2"> Chills</label><br>
-            <input type="checkbox" id="symptom3" name="symptom3" value="Cough">
-            <label for="symptom3"> Cough</label><br>
-            <input type="checkbox" id="symptom4" name="symptom4" value="Shortness_Breath">
-            <label for="symptom4"> Shortness of Breath</label><br>
-            <input type="checkbox" id="symptom5" name="symptom5" value="Fatigue">
-            <label for="symptom5"> Fatigue</label><br>
-            <input type="checkbox" id="symptom6" name="symptom6" value="Muscle">
-            <label for="symptom6"> Muscle or back pain</label><br>
-            <input type="checkbox" id="symptom7" name="symptom7" value="Chestpain">
-            <label for="symptom7"> Chestpain</label><br>
-            <input type="checkbox" id="symptom8" name="symptom8" value="Loss_of">
-            <label for="symptom8"> Loss of taste and smell</label><br><br>
-          </form>
+          <label>3. What coronavirus symptoms are you currently experiencing if any?</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option1">
+            <label class="form-check-label" for="Radio">
+              fever or chills
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option2">
+            <label class="form-check-label" for="Radio">
+              cough
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option3">
+            <label class="form-check-label" for="Radio">
+              shortness of breath / difficulty breathing
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option4">
+            <label class="form-check-label" for="Radio">
+              new loss of taste or smell
+            </label>
+          </div>
 
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option5">
+            <label class="form-check-label" for="Radio">
+              muscle or body aches
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option6">
+            <label class="form-check-label" for="Radio">
+              chest pain
+            </label>
+          </div>
           <label>4. Are you currently self quarantining? <input id="Yes_Exposed" name="status" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
 
           <br>
