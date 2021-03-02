@@ -45,6 +45,7 @@ $(function() {
     var symptoms = $('input[name="exampleRadios"]:checked').val();
     var quarantineStatus = $('input[name="status"]:checked').val();
     // more to added
+    console.log(universityId, "universityId");
     $.ajax({
       type: "POST",
       url: "add_user",
