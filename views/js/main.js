@@ -42,7 +42,11 @@ $(function() {
     var email = $("#InputEmail1").val();
     var exposure = $('input[name="exposure"]:checked').val();
     var testResult = $('input[name="test"]:checked').val();
-    var symptoms = $('input[name="exampleRadios"]:checked').val();
+    var feverChills = $('input[name="feverChills"]:checked').val();
+    var cough = $('input[name="cough"]:checked').val();
+    var breathing = $('input[name="breathing"]:checked').val();
+    var smell = $('input[name="smell"]:checked').val();
+    var bodyAches = $('input[name="bodyAches"]:checked').val();
     var quarantineStatus = $('input[name="status"]:checked').val();
     // more to added
     console.log(universityId, "universityId");
@@ -57,7 +61,11 @@ $(function() {
         email: email,
         exposure: exposure,
         testResult: testResult,
-        symptoms: symptoms,
+        feverChills: feverChills,
+        cough: cough,
+        breathing: breathing,
+        smell: smell,
+        bodyAches: bodyAches,
         quarantineStatus: quarantineStatus
       }),
       success: function(json) {
