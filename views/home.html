@@ -89,53 +89,58 @@
               <label for="exampleInputPassword1">Email</label>
               <input type="email" class="form-control" id="InputEmail1" placeholder="Email">
             </div>
-            <label>1. Have you been exposed to covid within the past 14 days: <input id="yes_exposed" name="exposure" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
+            <label>1. Have you been exposed to covid within the past 14 days: <input value="Yes" id="yes_exposed" name="exposure" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input value="No" id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
             <br>
-            <label>2. Have you been tested positive for covid within the past 14 days: <input id="Yes_Exposed" name="test" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
+            <label>2. Have you been tested positive for covid within the past 14 days: <input value="Yes" id="Yes_Exposed" name="test" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input value="No" id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
 
           </form>
 
          <label>3. What coronavirus symptoms are you currently experiencing if any? Please check the symptom you are experiencing. </label>
           <label>3. What coronavirus symptoms are you currently experiencing if any?</label>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option1">
-            <label class="form-check-label" for="Radio">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="Radio" value="fever or chills">
+            <label class="form-check-label" for="checkbox">
               fever or chills
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option2">
-            <label class="form-check-label" for="Radio">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="Radio" value="cough">
+            <label class="form-check-label" for="checkbox">
               cough
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option3">
-            <label class="form-check-label" for="Radio">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="Radio" value="shortness of breath / difficulty breathing">
+            <label class="form-check-label" for="checkbox">
               shortness of breath / difficulty breathing
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option4">
-            <label class="form-check-label" for="Radio">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="Radio" value="new loss of taste or smell">
+            <label class="form-check-label" for="checkbox">
               new loss of taste or smell
             </label>
           </div>
 
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option5">
-            <label class="form-check-label" for="Radio">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="Radio" value="muscle or body aches">
+            <label class="form-check-label" for="checkbox">
               muscle or body aches
             </label>
           </div>
 
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="exampleRadios" id="Radio" value="option6">
-            <label class="form-check-label" for="Radio">
+            <input class="form-check-input" type="checkbox" name="exampleRadios" id="Radio" value="chest pain">
+            <label class="form-check-label" for="checkbox">
               chest pain
             </label>
           </div>
+<<<<<<< HEAD
           <label>4. Are you currently self quarantining? <input id="Yes_Exposed" name="status" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
+=======
+
+          <label>4. Are you currently self quarantining? <input value="Yes" id="Yes_Exposed" name="status" type="checkbox">Yes&nbsp;&nbsp;&nbsp;<input value="No" id="No_Exposed" type="checkbox">No&nbsp;&nbsp;&nbsp;</label>
+>>>>>>> d848cafa4208faa4a3c6a35af1fa3f553f2b1dde
 
           <br>
           <button type="button" class="btn btn-primary" id="submit_button">Submit</button>
