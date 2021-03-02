@@ -121,7 +121,7 @@ function addUser(req, res) {
       // query the database
       //conn.query("INSERT INTO USERS (NAME) VALUE ('" + injson.name + "')", function(err, rows, fields) {
       console.log([injson.universityId, injson.today, injson.firstName, injson.lastName, injson.email, injson.symptoms, injson.exposure, injson.testResult, injson.quarantineStatus]);
-      conn.query("INSERT INTO STUDENT_STAFF (universityId, today, firstName, lastName, email, feverChills, cough, breathing, lossOfTasteSmell, bodyAches, exposure, testResult, quarantineStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [injson.universityId, injson.today, injson.firstName, injson.lastName, injson.email, injson.symptoms, injson.exposure, injson.testResult, injson.quarantineStatus], function(err, rows, fields) {
+      conn.query("INSERT INTO STUDENT_STAFF (universityId, today, firstName, lastName, email, feverChills, cough, breathing, lossOfTasteSmell, bodyAches, exposure, testResult, quarantineStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [injson.universityId, injson.today, injson.firstName, injson.lastName, injson.email, injson.symptoms, injson.exposure, injson.testResult, injson.quarantineStatus], function(err, rows, fields) {
         // build json result object
         var outjson = {};
         if (err) {
