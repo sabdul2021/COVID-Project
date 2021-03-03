@@ -16,7 +16,7 @@ $(function() {
           $("#users").empty();
           var rows = json.data;
           for (var i = 0; i < rows.length; i++) {
-            $("#users").append(rows[i].ID + " " + rows[i].NAME + "<br>");
+            $("#users").append(null);
           }
         }
       },
@@ -40,16 +40,28 @@ $(function() {
     var firstName = $("#InputFirstName1").val();
     var lastName = $("#InputLastName1").val();
     var email = $("#InputEmail1").val();
-    var exposure = $('input[name="exposure"]:checked').val();
-    var testResult = $('input[name="test"]:checked').val();
-    var feverChills = $('input[name="feverChills"]:checked').val();
-    var cough = $('input[name="cough"]:checked').val();
-    var breathing = $('input[name="breathing"]:checked').val();
-    var smell = $('input[name="smell"]:checked').val();
-    var bodyAches = $('input[name="bodyAches"]:checked').val();
-    var quarantineStatus = $('input[name="status"]:checked').val();
+    var exposure = $('input[name=exposure]:checked', '#exposure').val() === "on" ? 0 : 1;
+    var testResult = $('input[name=test]:checked', '#testResult').val() === "on" ? 0 : 1;
+    var feverChills = $('input[name=feverChills]:checked', '#feverChills').val() === "on" ? 0 : 1;
+    var cough = $('input[name=cough]:checked', '#cough').val() === "on" ? 0 : 1;
+    var breathing = $('input[name=breathing]:checked', '#breathing').val() === "on" ? 0 : 1;
+    var lossOfTasteSmell = $('input[name=smell]:checked', '#smell').val() === "on" ? 0 : 1;
+    var bodyAches = $('input[name=bodyAches]:checked', '#bodyAches').val() === "on" ? 0 : 1;
+    var quarantineStatus = $('input[name=status]:checked', '#quarantineStatus').val() === "on" ? 0 : 1;
     // more to added
+    console.log($("#exposure").val());
     console.log(universityId, "universityId");
+    console.log(firstName, "firstName");
+    console.log(email, "email");
+    console.log(today, "today");
+    console.log(exposure, "exposure");
+    console.log(testResult, "testResult");
+    console.log(feverChills, "feverChills");
+    console.log(cough, "cough");
+    console.log(breathing, "breathing");
+    console.log(lossOfTasteSmell, "smell");
+    console.log(bodyAches, "bodyAches");
+    console.log(quarantineStatus, "quarantineStatus");
     $.ajax({
       type: "POST",
       url: "add_user",
@@ -64,7 +76,7 @@ $(function() {
         feverChills: feverChills,
         cough: cough,
         breathing: breathing,
-        smell: smell,
+        lossOfTasteSmell: lossOfTasteSmell,
         bodyAches: bodyAches,
         quarantineStatus: quarantineStatus
       }),
