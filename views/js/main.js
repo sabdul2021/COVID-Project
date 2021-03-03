@@ -41,6 +41,10 @@ $(function() {
     var lastName = $("#InputLastName1").val();
     var email = $("#InputEmail1").val();
     var exposure = $('input[name=exposure]:checked', '#exposure').val() === "on" ? 0 : 1;
+    for(i = 0; i < exposure.length; i++) {
+                if(exposure[i].checked)
+                document.getElementById("exposure");
+              }
     var testResult = $('input[name=test]:checked', '#testResult').val() === "on" ? 0 : 1;
     var feverChills = $('input[name=feverChills]:checked', '#feverChills').val() === "on" ? 0 : 1;
     var cough = $('input[name=cough]:checked', '#cough').val() === "on" ? 0 : 1;
@@ -48,6 +52,7 @@ $(function() {
     var lossOfTasteSmell = $('input[name=smell]:checked', '#smell').val() === "on" ? 0 : 1;
     var bodyAches = $('input[name=bodyAches]:checked', '#bodyAches').val() === "on" ? 0 : 1;
     var quarantineStatus = $('input[name=status]:checked', '#quarantineStatus').val() === "on" ? 0 : 1;
+
     // more to added
     console.log($("#exposure").val());
     console.log(universityId, "universityId");
