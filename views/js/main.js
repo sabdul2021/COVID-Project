@@ -11,8 +11,7 @@ $(function() {
         //console.log(JSON.stringify(json));
         if (!json.success) {
           alert(json.message);
-        }
-        else {
+        } else {
           $("#users").empty();
           var rows = json.data;
           for (var i = 0; i < rows.length; i++) {
@@ -20,7 +19,7 @@ $(function() {
           }
         }
       },
-      error: function (textStatus, errorThrown) {
+      error: function(textStatus, errorThrown) {
         alert("Request failed!");
       }
     });
@@ -28,23 +27,30 @@ $(function() {
   showUsers();
 
   $("#submit_button").click(function() {
+    var found = 1;
     var universityId = $("#InputID").val();
     // date functionality added
     var today = new Date();
     var dd = ("0" + (today.getDate())).slice(-2);
-    var mm = ("0" + (today.getMonth() +　1)).slice(-2);
+    var mm = ("0" + (today.getMonth() + 1)).slice(-2);
     var yyyy = today.getFullYear();
-    today = yyyy + '-' + mm + '-' + dd ;
+    today = yyyy + '-' + mm + '-' + dd;
     $("#todays-date").attr("value", today);
     // ends with selected date
     var firstName = $("#InputFirstName1").val();
     var lastName = $("#InputLastName1").val();
     var email = $("#InputEmail1").val();
     var exposure = $('input[name=exposure]:checked', '#exposure').val() === "on" ? 0 : 1;
-    for(i = 0; i < exposure.length; i++) {
-                if(exposure[i].checked)
-                document.getElementById("exposure");
-              }
+    for (var i = 0; i < exposure.length; i++) {
+      if (exposure[i].checked) {
+        console.log(radios[i].value);
+        found = 0;
+        break;
+      }
+    }
+    if (found == 1) {
+      console.log("Please Select Radio");
+    }
     var testResult = $('input[name=test]:checked', '#testResult').val() === "on" ? 0 : 1;
     var feverChills = $('input[name=feverChills]:checked', '#feverChills').val() === "on" ? 0 : 1;
     var cough = $('input[name=cough]:checked', '#cough').val() === "on" ? 0 : 1;
@@ -89,12 +95,11 @@ $(function() {
         //console.log(JSON.stringify(json));
         if (!json.success) {
           alert(json.message);
-        }
-        else {
+        } else {
           showUsers();
         }
       },
-      error: function (textStatus, errorThrown) {
+      error: function(textStatus, errorThrown) {
         alert("Request failed!");
       }
     });
