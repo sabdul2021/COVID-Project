@@ -27,7 +27,7 @@ $(function() {
   showUsers();
 
   $("#submit_button").click(function() {
-    var found = 1;
+    var found = 0;
     var universityId = $("#InputID").val();
     // date functionality added
     var today = new Date();
@@ -43,14 +43,13 @@ $(function() {
     var exposure = $('input[name=exposure]:checked', '#exposure').val() === "on" ? 0 : 1;
     for (var i = 0; i < exposure.length; i++) {
       if (exposure[i].checked) {
-        console.log(radios[i].value);
-        found = 0;
-        break;
+        found == 1
+      } else {
+        found == 0
       }
     }
-    if (found == 1) {
-      console.log("Please Select Radio");
-    }
+
+
     var testResult = $('input[name=test]:checked', '#testResult').val() === "on" ? 0 : 1;
     var feverChills = $('input[name=feverChills]:checked', '#feverChills').val() === "on" ? 0 : 1;
     var cough = $('input[name=cough]:checked', '#cough').val() === "on" ? 0 : 1;
