@@ -1,5 +1,5 @@
 var mysql = require('mysql'); var con = mysql.createConnection({
-  host: "db.it.pointpark.edu:3306",
+  host: "db.it.pointpark.edu",
   user: "covidchecker",
   password: "covidchecker",
   database: "covidchecker"
