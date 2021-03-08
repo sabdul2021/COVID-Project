@@ -69,7 +69,7 @@
             Please answer the following questions as truthfully as possible
             in order to ensure the numbers and data collected can be as accurate, and free of error as possbile.</p>
 
-          <form>
+          <form id="covidform">
             <div class="form-group">
               <label for="exampleInputEmail1">University ID</label>
               <label for="InputID"></label><input class="form-control" id="InputID" aria-describedby="idlHelp" placeholder="Enter University ID">
@@ -93,9 +93,9 @@
             </div>
             <label>1. Have you been exposed to covid within the past 14 days: <input id="exposure" value="1" name="exposure" type="radio">Yes&nbsp;&nbsp;&nbsp;<input id="exposure" value="0" name="exposure" type="radio">No&nbsp;&nbsp;&nbsp;</label>
             <br>
-            <label>2. Have you been tested positive for covid within the past 14 days: <input id="#testResult" value="1" name="test" type="radio">Yes&nbsp;&nbsp;&nbsp;<input id="test" value="0" name="test" type="radio">No&nbsp;&nbsp;&nbsp;</label>
+            <label>2. Have you been tested positive for covid within the past 14 days: <input id="testResult" value="1" name="test" type="radio">Yes&nbsp;&nbsp;&nbsp;<input id="test" value="0" name="test" type="radio">No&nbsp;&nbsp;&nbsp;</label>
 
-          </form>
+
 
           <label>3. What coronavirus symptoms are you currently experiencing if any? Please check the symptom you are experiencing. </label>
           <div class="form-check">
@@ -119,7 +119,7 @@
           </div>
 
           <label>4. Are you currently self quarantining? <input id="quarantineStatus" value="1" name="status" type="radio">Yes&nbsp;&nbsp;&nbsp;<input id="quarantineStatus" value="0" name="status" type="radio">No&nbsp;&nbsp;&nbsp;</label>
-
+        </form>
           <br>
           <button type="button" class="btn btn-primary" id="submit_button">Submit</button>
           <br>
