@@ -3,12 +3,14 @@ var fs = require("fs");
 var mysql = require("mysql");
 var qs = require("querystring");
 var credentials = require("./credentials");
-
+​
 http.createServer(function(req, res) {
   try {
     var path = req.url.replace(/\/?(?:\?.*)?$/, "").toLowerCase();
     if (path === "/users") {
       users(req, res);
+    } else if (path === "/exposure") {
+      exposure(req, res);
     } else if (path === "/add_user") {
       addUser(req, res);
     } else {
@@ -26,7 +28,7 @@ http.createServer(function(req, res) {
     }
   }
 }).listen(3000);
-
+​
 function serveStaticFile(res, path, contentType, responseCode) {
   if (!path) path = "/home.html";
   if (!responseCode) responseCode = 200;
@@ -62,14 +64,14 @@ function serveStaticFile(res, path, contentType, responseCode) {
     }
   });
 }
-
+​
 function sendResponse(req, res, data) {
   res.writeHead(200, {
     "Content-Type": "application/json; charset=utf-8"
   });
   res.end(JSON.stringify(data));
 }
-
+​
 function users(req, res) {
   var conn = mysql.createConnection(credentials.connection);
   // connect to database
@@ -98,7 +100,38 @@ function users(req, res) {
     conn.end();
   });
 }
-
+​
+​
+​
+function exposure(req, res) {
+  var conn = mysql.createConnection(credentials.connection);
+  // connect to database
+  conn.connect(function(err) {
+    if (err) {
+      console.error("ERROR: cannot connect: " + err);
+      return;
+    }
+    // query the database
+    conn.query("SELECT SUM(exposure) FROM STUDENT_STAFF WHERE exposure = 1", function(err, rows, fields) {
+      // build json result object
+      var outjson = {};
+      if (err) {
+        // query failed
+        outjson.success = false;
+        outjson.message = "Query failed: " + err;
+      } else {
+        // query successful
+        outjson.success = true;
+        outjson.message = "Query successful!";
+        outjson.data = rows;
+      }
+      // return json object that contains the result of the query
+      sendResponse(req, res, outjson);
+    });
+    conn.end();
+  });
+}
+​
 function addUser(req, res) {
   var body = "";
   req.on("data", function(data) {
@@ -140,5 +173,5 @@ function addUser(req, res) {
     });
   });
 }
-
+​
 console.log("Server started on localhost: 3000; press Ctrl-C to terminate....");
