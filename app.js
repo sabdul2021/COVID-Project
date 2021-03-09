@@ -3,7 +3,7 @@ var fs = require("fs");
 var mysql = require("mysql");
 var qs = require("querystring");
 var credentials = require("./credentials");
-​
+
 http.createServer(function(req, res) {
   try {
     var path = req.url.replace(/\/?(?:\?.*)?$/, "").toLowerCase();
@@ -28,7 +28,7 @@ http.createServer(function(req, res) {
     }
   }
 }).listen(3000);
-​
+
 function serveStaticFile(res, path, contentType, responseCode) {
   if (!path) path = "/home.html";
   if (!responseCode) responseCode = 200;
@@ -64,14 +64,14 @@ function serveStaticFile(res, path, contentType, responseCode) {
     }
   });
 }
-​
+
 function sendResponse(req, res, data) {
   res.writeHead(200, {
     "Content-Type": "application/json; charset=utf-8"
   });
   res.end(JSON.stringify(data));
 }
-​
+
 function users(req, res) {
   var conn = mysql.createConnection(credentials.connection);
   // connect to database
@@ -100,9 +100,7 @@ function users(req, res) {
     conn.end();
   });
 }
-​
-​
-​
+
 function exposure(req, res) {
   var conn = mysql.createConnection(credentials.connection);
   // connect to database
@@ -131,7 +129,7 @@ function exposure(req, res) {
     conn.end();
   });
 }
-​
+
 function addUser(req, res) {
   var body = "";
   req.on("data", function(data) {
@@ -173,5 +171,5 @@ function addUser(req, res) {
     });
   });
 }
-​
+
 console.log("Server started on localhost: 3000; press Ctrl-C to terminate....");
