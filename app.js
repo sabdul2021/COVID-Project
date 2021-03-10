@@ -1,12 +1,13 @@
-var http = require("http");
-var fs = require("fs");
-var mysql = require("mysql");
-var qs = require("querystring");
-var credentials = require("./credentials");
+
+
+let http = require("http");
+let fs = require("fs");
+let mysql = require("mysql");
+let credentials = require("./credentials");
 
 http.createServer(function(req, res) {
   try {
-    var path = req.url.replace(/\/?(?:\?.*)?$/, "").toLowerCase();
+    let path = req.url.replace(/\/?(?:\?.*)?$/, "").toLowerCase();
     if (path === "/users") {
       users(req, res);
     } else if (path === "/exposure") {
@@ -73,7 +74,7 @@ function sendResponse(req, res, data) {
 }
 
 function users(req, res) {
-  var conn = mysql.createConnection(credentials.connection);
+  let conn = mysql.createConnection(credentials.connection);
   // connect to database
   conn.connect(function(err) {
     if (err) {
@@ -81,9 +82,9 @@ function users(req, res) {
       return;
     }
     // query the database
-    conn.query("SELECT * FROM STUDENT_STAFF", function(err, rows, fields) {
+    conn.query("SELECT * FROM STUDENT_STAFF", function(err, rows) {
       // build json result object
-      var outjson = {};
+      let outjson = {};
       if (err) {
         // query failed
         outjson.success = false;
@@ -102,7 +103,7 @@ function users(req, res) {
 }
 
 function exposure(req, res) {
-  var conn = mysql.createConnection(credentials.connection);
+  let conn = mysql.createConnection(credentials.connection);
   // connect to database
   conn.connect(function(err) {
     if (err) {
@@ -110,9 +111,9 @@ function exposure(req, res) {
       return;
     }
     // query the database
-    conn.query("SELECT SUM(exposure) FROM STUDENT_STAFF WHERE exposure = 1", function(err, rows, fields) {
+    conn.query("SELECT SUM(exposure) FROM STUDENT_STAFF WHERE exposure = 1", function(err, rows) {
       // build json result object
-      var outjson = {};
+      let outjson = {};
       if (err) {
         // query failed
         outjson.success = false;
@@ -131,7 +132,7 @@ function exposure(req, res) {
 }
 
 function addUser(req, res) {
-  var body = "";
+  let body = "";
   req.on("data", function(data) {
     body += data;
     // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
@@ -141,8 +142,8 @@ function addUser(req, res) {
     }
   });
   req.on("end", function() {
-    var injson = JSON.parse(body);
-    var conn = mysql.createConnection(credentials.connection);
+    let injson = JSON.parse(body);
+    let conn = mysql.createConnection(credentials.connection);
     // connect to database
     conn.connect(function(err) {
       if (err) {
@@ -151,10 +152,10 @@ function addUser(req, res) {
       }
       // query the database
       //conn.query("INSERT INTO USERS (NAME) VALUE ('" + injson.name + "')", function(err, rows, fields) {
-      console.log([injson.universityId, injson.today, injson.firstName, injson.lastName, injson.email, injson.feverChills, injson.cough, injson.breathing, injson.lossOfTasteSmell, injson.bodyAches, injson.exposure, injson.testResult, injson.quarantineStatus]);
-      conn.query("INSERT INTO STUDENT_STAFF (universityId, today, firstName, lastName, email, feverChills, cough, breathing, lossOfTasteSmell, bodyAches, exposure, testResult, quarantineStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [injson.universityId, injson.today, injson.firstName, injson.lastName, injson.email, injson.feverChills, injson.cough, injson.breathing, injson.lossOfTasteSmell, injson.bodyAches, injson.exposure, injson.testResult, injson.quarantineStatus], function(err, rows, fields) {
+      console.log([injson.universityId, injson.today, injson.selectTypeUniversity, injson.firstName, injson.lastName, injson.email, injson.feverChills, injson.cough, injson.breathing, injson.lossOfTasteSmell, injson.bodyAches, injson.exposure, injson.testResult, injson.quarantineStatus]);
+      conn.query("INSERT INTO STUDENT_STAFF (universityId, today, selectTypeUniversity,, firstName, lastName, email, feverChills, cough, breathing, lossOfTasteSmell, bodyAches, exposure, testResult, quarantineStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [injson.universityId, injson.today, injson.selectTypeUniversity, injson.firstName, injson.lastName, injson.email, injson.feverChills, injson.cough, injson.breathing, injson.lossOfTasteSmell, injson.bodyAches, injson.exposure, injson.testResult, injson.quarantineStatus], function(err) {
         // build json result object
-        var outjson = {};
+        let outjson = {};
         if (err) {
           // query failed
           outjson.success = false;
