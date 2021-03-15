@@ -92,7 +92,7 @@
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">Options</label>
                         </div>
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select name="selectAcademic" class="custom-select" id="inputGroupSelect01">
                             <option selected>Choose...</option>
                             <option value="1">Student</option>
                             <option value="2">Faulty</option>
@@ -162,7 +162,7 @@
                 <div class="form-actions">
                     <button type="button"
                             style="display:block; line-height: 20px; width:50%; text-align:center; margin:0 auto;"
-                            class="btn btn-primary closebtn" id="submit_button">Submit
+                            class="btn btn-primary closebtn" id="submit_button" onsubmit="return checkForm(this);">Submit
                     </button>
                 </div>
             </form>

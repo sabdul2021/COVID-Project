@@ -1,9 +1,8 @@
-
-
 let http = require("http");
 let fs = require("fs");
 let mysql = require("mysql");
 let credentials = require("./credentials");
+let e = require("express");
 
 http.createServer(function(req, res) {
   try {
@@ -32,7 +31,7 @@ http.createServer(function(req, res) {
 
 function serveStaticFile(res, path, contentType, responseCode) {
   if (!path) path = "/home.html";
-  if (!responseCode) responseCode = 200;
+  if (!responseCode)
   if (!contentType) {
     contentType = "application/octet-stream";
     if (path.endsWith("home.html")) {
@@ -153,7 +152,7 @@ function addUser(req, res) {
       // query the database
       //conn.query("INSERT INTO USERS (NAME) VALUE ('" + injson.name + "')", function(err, rows, fields) {
       console.log([injson.universityId, injson.today, injson.selectTypeUniversity, injson.firstName, injson.lastName, injson.email, injson.feverChills, injson.cough, injson.breathing, injson.lossOfTasteSmell, injson.bodyAches, injson.exposure, injson.testResult, injson.quarantineStatus]);
-      conn.query("INSERT INTO STUDENT_STAFF (universityId, today, selectTypeUniversity,, firstName, lastName, email, feverChills, cough, breathing, lossOfTasteSmell, bodyAches, exposure, testResult, quarantineStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [injson.universityId, injson.today, injson.selectTypeUniversity, injson.firstName, injson.lastName, injson.email, injson.feverChills, injson.cough, injson.breathing, injson.lossOfTasteSmell, injson.bodyAches, injson.exposure, injson.testResult, injson.quarantineStatus], function(err) {
+      conn.query("INSERT INTO STUDENT_STAFF (universityId, today, selectTypeUniversity, firstName, lastName, email, feverChills, cough, breathing, lossOfTasteSmell, bodyAches, exposure, testResult, quarantineStatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", [injson.universityId, injson.today, injson.selectTypeUniversity, injson.firstName, injson.lastName, injson.email, injson.feverChills, injson.cough, injson.breathing, injson.lossOfTasteSmell, injson.bodyAches, injson.exposure, injson.testResult, injson.quarantineStatus], function(err) {
         // build json result object
         let outjson = {};
         if (err) {

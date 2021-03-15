@@ -22,7 +22,7 @@ $(function() {
   }
   showUsers();
 
-  $("#submit_button").click(function() {
+  $("#submit_button").click(function () {
     let universityId = $("#InputID").val();
     // date functionality added
     let today = new Date();
@@ -33,7 +33,7 @@ $(function() {
     $("#todays-date").attr("value", today);
 
     // select drop-down
-    let selectTypeUniversity = $("#inputGroupSelect01 :selected").val();
+    let selectTypeUniversity = $("#covidform option:selected").text();
     // ends with selected date
     let firstName = $("#InputFirstName1").val();
     let lastName = $("#InputLastName1").val();
@@ -48,6 +48,7 @@ $(function() {
     let quarantineStatus = Number($('input[name=status]:checked', '#covidform').val());
 
     // more to added
+    console.log("selectTypeUniversity: " + selectTypeUniversity);
     console.log("testResult: " + testResult);
     console.log("feverChills: " + feverChills);
     console.log("cough: " + cough);
@@ -74,7 +75,7 @@ $(function() {
         bodyAches: bodyAches,
         quarantineStatus: quarantineStatus
       }),
-      success: function(json) {
+      success: function (json) {
         //console.log(JSON.stringify(json));
         if (!json.success) {
           alert(json.message);
@@ -82,7 +83,7 @@ $(function() {
           showUsers();
         }
       },
-      error: function() {
+      error: function () {
         alert("Request failed!");
       }
     });
