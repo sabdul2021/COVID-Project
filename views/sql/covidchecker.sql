@@ -1,27 +1,25 @@
-create database Covid_Checker;
+create
+database Covid_Checker;
 
-USE Covid_Checker;
+USE
+covidchecker;
 
-
-
-CREATE TABLE IF NOT EXISTS STUDENT_STAFF(
-	universityId		int							NOT NULL AUTO_INCREMENT,
-	firstName			char(25)					NOT NULL,
-	lastName			char(25)					NOT NULL,
-	email				varchar(100)				NOT NULL,
-	CONSTRAINT 			UNIVERSITY_PK 				PRIMARY KEY(universityId),
-	CONSTRAINT			UNIVERSITY_EMAIL			UNIQUE(email)
-	);
-
-CREATE TABLE IF NOT EXISTS COVID_SYMPTOMS(
-	universityId		int					NOT NULL AUTO_INCREMENT,
-	symptoms 			varchar(225)		NOT NULL,
-	exposure			varchar(225)		NOT NULL,
-	testResults			varchar(225)		NOT NULL,
-	currentSymptoms	 	varchar(225)		NOT NULL,
-	quarantineStatus 	varchar(225)		NOT NULL,
-	CONSTRAINT 			UNIVERSITY_FK 	FOREIGN KEY(universityId)
-	REFERENCES 			STUDENT_STAFF(universityId)
-	ON UPDATE NO ACTION
-	ON DELETE CASCADE
-);
+CREATE TABLE `STUDENT_STAFF`
+(
+    `universityId`         int(6) NOT NULL,
+    `today`                datetime     NOT NULL,
+    `selectTypeUniversity` varchar ('Student','Faulty','Staff') NOT NULL,
+    `firstName`            varchar(25)  NOT NULL,
+    `lastName`             varchar(25)  NOT NULL,
+    `email`                varchar(100) NOT NULL,
+    `feverChills`          tinyint(1) NOT NULL,
+    `cough`                tinyint(1) NOT NULL,
+    `breathing`            tinyint(1) NOT NULL,
+    `lossOfTasteSmell`     tinyint(1) NOT NULL,
+    `bodyAches`            tinyint(1) NOT NULL,
+    `exposure`             tinyint(1) NOT NULL,
+    `testResult`           tinyint(1) NOT NULL,
+    `quarantineStatus`     tinyint(1) NOT NULL,
+    PRIMARY KEY (`universityId`),
+    UNIQUE KEY `UNIVERSITY_EMAIL` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4

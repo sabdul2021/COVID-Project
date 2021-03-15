@@ -1,60 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Admin Page</title>
 
-/* Create four equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
 </head>
 <body>
 
-<center><h2>Admin Panel</h2>
+<div style="text-align: center;"><h2>Admin Panel</h2>
 
-  <br>
-  <p>The data has been updated for the following visualizations</p>
+    <br>
+    <p>The data has been updated for the following visualizations</p>
 
-<div class="row">
-  <div class="column" style="background-color:#aaa;">
-    <h2>Quick Glance Metrics</h2>
-    <p>Total active cases, total exposed, total quarantine</p>
-<p>Rationale: Grab a snapshot of quick data points that can be used for
-university admin/stakeholders communication, or even for meetings to discuss mitigation strategy.  </p>
-  </div>
-  <div class="column" style="background-color:#bbb;">
-    <h2>“What is the [date dimension] total of exposed students/faculty”</h2>
-    <p>Date dimension - day, week, month, quarter, year</p>
-    <p>Metrics - Timeseries of the total of exposed students over time for the selected dimension</p>
-    <p>Ways to visualize:
-Total active cases - time series (line chart)
-Timeseries - student vs staff cases (bar chart)
-</p>
-  </div>
-  <div class="column" style="background-color:#ccc;">
-    <h2>“What are the most prevalent symptoms experienced”</h2>
-    <p>Opportunity to do a bar chart, or some type of visualization where (word cloud)</p>
-  </div>
-  <div class="column" style="background-color:#ddd;">
-    <h2>What is the exposure/test ratio?</h2>
-    <p>Sum of students&faculty exposed / students&faculty tested positive for covid</p>
-  </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="p-2 col text-white" style="background-color:#797878;">
+                <h2>Quick Glance Metrics</h2>
+                <p>Total active cases, total exposed, total quarantine
+                    Rationale: Grab a snapshot of quick data points that can be used for
+                    university admin/stakeholders communication, or even for meetings to discuss mitigation
+                    strategy. </p>
+            </div>
+            <div class="p-2 col text-white" style="background-color:#9d9d9d;">
+                <h2>What is the [date dimension] total of exposed students/faculty?</h2>
+                <p>Date dimension - day, week, month, quarter, year</p>
+                <p>Metrics - Timeseries of the total of exposed students over time for the selected dimension</p>
+                <p>Ways to visualize:
+                    Total active cases - time series (line chart)
+                    Timeseries - student vs staff cases (bar chart)
+                </p>
+            </div>
+            <div class="w-100"></div>
+            <div class="p-2 col text-white" style="background-color:#9d9d9d;">
+                <h2>What are the most prevalent symptoms experienced?</h2>
+                <p>Opportunity to do a bar chart, or some type of visualization where (word cloud)</p>
+            </div>
+            <div class="p-2 col text-white" style="background-color:#797878;">
+                <h2>What is the exposure/test ratio?</h2>
+                <p>Sum of students&faculty exposed / students&faculty tested positive for covid</p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
