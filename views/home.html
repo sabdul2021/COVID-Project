@@ -87,23 +87,40 @@
                 </div>
 
 
-                <label>University Academic Type</label>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                        </div>
-                        <select name="selectAcademic" class="custom-select" id="inputGroupSelect01">
-                            <option selected>Choose...</option>
-                            <option value="1">Student</option>
-                            <option value="2">Faculty</option>
-                            <option value="3">Staff</option>
-                        </select>
-                    </div>
-
+                <label>University Academic Type:</label>
+                <br>
+                <div class="form-check form-check-inline">
+                    <label for="underGrad"></label><input name="underGrad" class="form-check-input" type="checkbox"
+                                                          id="underGrad" value="1">
+                    <label class="form-check-label">Undergrad</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label for="grad"></label><input name="grad" class="form-check-input" type="checkbox" id="grad"
+                                                     value="option2">
+                    <label class="form-check-label">Grad</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label for="faculty"></label><input name="faculty" class="form-check-input" type="checkbox"
+                                                        id="faculty" value="option3">
+                    <label class="form-check-label">Faculty</label>
+                </div>
+                <div name="selectTypeUniversity" class="form-check form-check-inline">
+                    <label for="staff"></label><input name="staff" class="form-check-input" type="checkbox" id="staff"
+                                                      value="option4">
+                    <label class="form-check-label">Staff</label>
+                </div>
+                <br>
+                <br>
+                <label class="justify-content-center"> Are you a commuter?
+                    <input value="1" name="commuter" type="radio">Yes&nbsp;&nbsp;&nbsp;
+                    <input id="commuter" value="0" name="commuter" type="radio">No&nbsp;&nbsp;&nbsp;</label>
+                <br>
+                <br>
                 <div class="form-group">
                     <label>Current Date</label>
                     <label for="todays-date"></label><input type="date" id="todays-date" value="" class="form-control">
                 </div>
+                <br>
                 <div class="form-group">
                     <label>First Name</label>
                     <label for="InputFirstName1"></label><input class="form-control" id="InputFirstName1"
@@ -116,21 +133,29 @@
                     <label>Email</label>
                     <label for="InputEmail1"></label><input type="email" class="form-control" id="InputEmail1"
                                                             placeholder="Email">
+                    <br>
                 </div>
-                <label>1. Have you been exposed to covid within the past 14 days?: <input value="1"
-                                                                                         name="exposure" type="radio">Yes&nbsp;&nbsp;&nbsp;<input
-                        id="exposure" value="0" name="exposure" type="radio">No&nbsp;&nbsp;&nbsp;</label>
-                <br>
-                <label>2. Have you been tested positive for covid within the past 14 days?: <input id="testResult"
-                                                                                                  value="1" name="test"
-                                                                                                  type="radio">Yes&nbsp;&nbsp;&nbsp;<input
-                        id="test" value="0" name="test" type="radio">No&nbsp;&nbsp;&nbsp;</label>
-
-
-                <label>3. What coronavirus symptoms are you currently experiencing if any? Please check the symptom you
-                    are experiencing. </label>
+                <div class="form-check justify-content-center">
+                    <label>1. Have you been exposed to covid within the past 14 days?: <input value="1"
+                                                                                              name="exposure"
+                                                                                              type="radio">Yes&nbsp;&nbsp;&nbsp;<input
+                            id="exposure" value="0" name="exposure" type="radio">No&nbsp;&nbsp;&nbsp;</label>
+                </div>
                 <div class="form-check">
-                    <label>fever or chills <input value="1" name="feverChills" type="radio">Yes&nbsp;&nbsp;&nbsp;<input
+                    <label>2. Have you been tested positive for covid within the past 14 days?: <input id="testResult"
+                                                                                                       value="1"
+                                                                                                       name="test"
+                                                                                                       type="radio">Yes&nbsp;&nbsp;&nbsp;<input
+                            id="test" value="0" name="test" type="radio">No&nbsp;&nbsp;&nbsp;</label>
+                </div>
+
+                <div class="form-check">
+                    <label>3. What coronavirus symptoms are you currently experiencing if any? Please check the symptom
+                        you
+                        are experiencing. </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-inline">fever or chills <input value="1" name="feverChills" type="radio">Yes&nbsp;&nbsp;&nbsp;<input
                             id="feverChills" value="0" name="feverChills" type="radio">No&nbsp;&nbsp;&nbsp;</label>
                 </div>
 
@@ -155,32 +180,50 @@
                             id="bodyAches" value="0" name="bodyAches" type="radio">No&nbsp;&nbsp;&nbsp;</label>
                 </div>
 
-                <label>4. Are you currently self quarantining? <input value="1" name="status"
-                                                                      type="radio">Yes&nbsp;&nbsp;&nbsp;<input
-                        id="quarantineStatus" value="0" name="status" type="radio">No&nbsp;&nbsp;&nbsp;</label>
+                <div class="form-check">
+                    <label>4. Are you currently self quarantining? <input value="1" name="status" type="radio">Yes&nbsp;&nbsp;&nbsp;<input
+                            id="status" value="0" name="status" type="radio">No&nbsp;&nbsp;&nbsp;</label>
+                </div>
 
+                <div class="form-check">
+                    <label>5. Have been in close contact with anyone that has covid-19? <input value="1"
+                                                                                               name="closeContact"
+                                                                                               type="radio">Yes&nbsp;&nbsp;&nbsp;<input
+                            id="closeContact" value="0" name="closeContact" type="radio">No&nbsp;&nbsp;&nbsp;</label>
+                </div>
+
+                <div class="form-check">
+                    <label for="explainSymptoms">If yes, explain how you seen someone you know
+                        has caught symptoms of Covid-19</label>
+                    <textarea class="form-control" name="explainSymptoms" id="explainSymptoms" rows="3"></textarea>
+                </div>
+
+                <div class="form-check">
+                    <label>6. Have been social distancing and wearing a mask lately? <input value="1" name="wearMask"
+                                                                                            type="radio">Yes&nbsp;&nbsp;&nbsp;<input
+                            id="wearMask" value="0" name="wearMask" type="radio">No&nbsp;&nbsp;&nbsp;</label>
+                </div>
+
+                <br>
+                <br>
                 <div class="form-actions">
                     <button type="button"
-                            style="display:block; line-height: 20px; width:50%; text-align:center; margin:0 auto;"
-                            class="btn btn-primary closebtn" id="submit_button" onsubmit="return checkForm(this);">Submit
+                            style="display:block; line-height: 20px; width:18%; text-align:center; margin:0 auto;"
+                            class="btn btn-primary closebtn" id="submit_button">Submit
                     </button>
                 </div>
             </form>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <div id="footer">
-                <div style="text-align: center;">
-                    <i><a href="https://www.pointpark.edu/academics/schools/business/undergraduateprogram/appliedcomputerscience">&copy;
-                        Created in the Applied Computer Science Senior Project Course</a></i><br><br>
-                </div>
-            </div>
         </div>
 
+        <br>
+        <br>
+        <br>
+        <div style="text-align: center;">
+            <i><a href="https://www.pointpark.edu/academics/schools/business/undergraduateprogram/appliedcomputerscience">&copy;
+                Created in the Applied Computer Science Senior Project Course</a></i><br><br>
+        </div>
     </div>
+
 </section>
 
 

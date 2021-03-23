@@ -57,3 +57,8 @@ the university policy on covid to help with mitigation.
 1. Ads
 2. Sponsors
 3. Possible built in university fees.
+
+### Survey Checker (PPU Covid-Checker)
+1. Added question related to COVID-19
+2. Academic Type will distinguish which university member is a student, faculty, and staff member
+3. Will provide later insight of data collected and presented to the User's (Point Park academic members)

@@ -20,15 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c4d50d4-7ff1-4146-ba11-6c9e82c3ab58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/COVID-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/COVID-Project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/Senior Project_ Use Case (3).pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c00cda2b-7228-4561-bba6-da48418cbe90.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c00cda2b-7228-4561-bba6-da48418cbe90.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BusinesModelCanvas.md" beforeDir="false" afterPath="$PROJECT_DIR$/BusinesModelCanvas.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/Covid 19 self checker questionnaire.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/Module 2 Assignment.docx" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/Module 7 Assignment.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/Module 2 assignment use case.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/emailUseCase.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/emailUseCase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/live data usecase.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sql/covidchecker.sql" beforeDir="false" afterPath="$PROJECT_DIR$/views/sql/covidchecker.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +56,15 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1pDtnKYYP8vOsbEUcbBJbSlfcfX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -74,12 +82,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/documentation" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/views/js/main.js" working-dir="$PROJECT_DIR$/views/js">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
@@ -96,6 +110,9 @@
       <workItem from="1615658723406" duration="308000" />
       <workItem from="1615659105689" duration="1035000" />
       <workItem from="1615660233968" duration="7283000" />
+      <workItem from="1615840966716" duration="877000" />
+      <workItem from="1616369349007" duration="346000" />
+      <workItem from="1616370300876" duration="13835000" />
     </task>
     <servers />
   </component>
@@ -113,5 +130,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
