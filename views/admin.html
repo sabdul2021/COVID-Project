@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
     <meta name="description" content="">
-    <title>Admin Page</title>
 
+
+    <title>Admins Page</title>
     <link rel="stylesheet" href="assets/tether/tether.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -20,47 +23,69 @@
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
 
 </head>
+
 <body>
+<section class="menu cid-s48OLK6784" nonce="menu" id="menu1-h">
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+          <span class="navbar-logo">
 
-<div style="text-align: center;"><h2>Admin Panel</h2>
+            <img src="assets/images/logo.png" alt="" style="height: 3.8rem;">
 
-    <br>
-    <p>The data has been updated for the following visualizations</p>
+          </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-5"
+                                                     href="http://google.com">Covid-19 Self-Checker</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item"><a class="nav-link link text-black display-4"
+                                            href="https://www.pointpark.edu/index"></a></li>
+                    <li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobirise.com"></a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</section>
+
+<section id="header1-f">
 
 
     <div class="container">
-        <div class="row">
-            <div class="p-2 col text-white" style="background-color:#797878;">
-                <h2>Quick Glance Metrics</h2>
-                <p>Total active cases, total exposed, total quarantine
-                    Rationale: Grab a snapshot of quick data points that can be used for
-                    university admin/stakeholders communication, or even for meetings to discuss mitigation
-                    strategy. </p>
-            </div>
-            <div class="p-2 col text-white" style="background-color:#9d9d9d;">
-                <h2>What is the [date dimension] total of exposed students/faculty?</h2>
-                <p>Date dimension - day, week, month, quarter, year</p>
-                <p>Metrics - Timeseries of the total of exposed students over time for the selected dimension</p>
-                <p>Ways to visualize:
-                    Total active cases - time series (line chart)
-                    Timeseries - student vs staff cases (bar chart)
-                </p>
-            </div>
-            <div class="w-100"></div>
-            <div class="p-2 col text-white" style="background-color:#9d9d9d;">
-                <h2>What are the most prevalent symptoms experienced?</h2>
-                <p>Opportunity to do a bar chart, or some type of visualization where (word cloud)</p>
-            </div>
-            <div class="p-2 col text-white" style="background-color:#797878;">
-                <h2>What is the exposure/test ratio?</h2>
-                <p>Sum of students&faculty exposed / students&faculty tested positive for covid</p>
+        <div class="card border-5 shadow my-5">
+            <div class="card-body p-4">
+                <h1 class="middle text-center">Exposure Data</h1>
+                <canvas id="canvas"></canvas>
             </div>
         </div>
     </div>
 
-</div>
+</section>
 
 
+<script src="assets/tether/tether.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/smoothscroll/smooth-scroll.js"></script>
+<script src="assets/dropdown/js/nav-dropdown.js"></script>
+<script src="assets/dropdown/js/navbar-dropdown.js"></script>
+<script src="assets/theme/js/script.js"></script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -68,5 +93,8 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+<script src="js/Chart.min.js"></script>
+
 </body>
+
 </html>

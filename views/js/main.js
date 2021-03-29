@@ -145,17 +145,14 @@ function showLineGraph() {
         let graphTarget = $("#canvas");
         $.post("/exposure",
             function (data) {
-                console.log(data);
-                let exposure = [];
+                console.log(data.data);
+                console.log((Object.keys((data.data))));
+                console.log(data.data[0]["SUM(exposure)"]);
+                let exposure = [0, data.data[0]["SUM(exposure)"]];
 
-                for (let i in data) {
-                    if (data.hasOwnProperty(i)) {
-                        exposure.push(data[i].exposure);
-                    }
-                }
-
+                console.log(exposure);
                 let chartdata = {
-                    labels: exposure,
+                    labels: ["exposure"],
                     datasets: [{
                         label: 'Exposure',
                         backgroundColor: '#1E90FF',
@@ -167,7 +164,7 @@ function showLineGraph() {
 
 
                 let barChartDisplay = new Chart(graphTarget, {
-                    type: 'line',
+                    type: 'bar',
                     data: chartdata
                 });
                 console.log(barChartDisplay);
