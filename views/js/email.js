@@ -7,7 +7,7 @@ var transporter = nodemailer.createTransport({
     secureConnection: false,
     port: 587, // port for secure SMTP
     tls: {
-       ciphers:'SSLv3'
+        ciphers: 'SSLv3'
     },
     auth: {
         user: 'mymail@outlook.com',
@@ -25,8 +25,8 @@ var mailOptions = {
 };
 
 // send mail with defined transport object
-transporter.sendMail(mailOptions, function(error, info){
-    if(error){
+transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
         return console.log(error);
     }
 

@@ -7,8 +7,9 @@ covidchecker;
 CREATE TABLE `STUDENT_STAFF`
 (
     `universityId`         int(6) NOT NULL,
-    `today`                datetime     NOT NULL,
-    `selectTypeUniversity` varchar ('Student','Faulty','Staff') NOT NULL,
+    `today`                datetime NOT NULL,
+    `selectTypeUniversity` varchar('Student', 'Faulty', 'Staff'
+) NOT NULL,
     `firstName`            varchar(25)  NOT NULL,
     `lastName`             varchar(25)  NOT NULL,
     `email`                varchar(100) NOT NULL,

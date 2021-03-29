@@ -20,19 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c4d50d4-7ff1-4146-ba11-6c9e82c3ab58" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/documentation/Senior Project_ Use Case (3).pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c00cda2b-7228-4561-bba6-da48418cbe90.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c00cda2b-7228-4561-bba6-da48418cbe90.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusinesModelCanvas.md" beforeDir="false" afterPath="$PROJECT_DIR$/BusinesModelCanvas.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/Covid 19 self checker questionnaire.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/Module 2 Assignment.docx" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/Module 7 Assignment.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/Module 2 assignment use case.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/emailUseCase.md" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/emailUseCase.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/live data usecase.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/credentials.js" beforeDir="false" afterPath="$PROJECT_DIR$/credentials.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/css/about.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/js/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/Chart.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/js/email.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/email.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/js/jquery-3.5.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/jquery-3.5.1.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sql/covidchecker.sql" beforeDir="false" afterPath="$PROJECT_DIR$/views/sql/covidchecker.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +73,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.7" />
     <property name="js.last.introduce.type" value="LET" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -95,6 +100,7 @@
       <list>
         <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.main.js" />
+        <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +118,8 @@
       <workItem from="1615660233968" duration="7283000" />
       <workItem from="1615840966716" duration="877000" />
       <workItem from="1616369349007" duration="346000" />
-      <workItem from="1616370300876" duration="13835000" />
+      <workItem from="1616370300876" duration="14320000" />
+      <workItem from="1616972457145" duration="10471000" />
     </task>
     <servers />
   </component>
