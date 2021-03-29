@@ -135,3 +135,42 @@ for (i = 0; i < close.length; i++) {
         alert("Survey has been submitted");
     }
 }
+
+$(document).ready(function () {
+    showLineGraph();
+});
+
+function showLineGraph() {
+    {
+        let graphTarget = $("#canvas");
+        $.post("/exposure",
+            function (data) {
+                console.log(data);
+                let exposure = [];
+
+                for (let i in data) {
+                    if (data.hasOwnProperty(i)) {
+                        exposure.push(data[i].exposure);
+                    }
+                }
+
+                let chartdata = {
+                    labels: exposure,
+                    datasets: [{
+                        label: 'Exposure',
+                        backgroundColor: '#1E90FF',
+                        borderColor: '#46d5f1',
+                        hoverBorderColor: '#666666',
+                        data: [exposure]
+                    }]
+                };
+
+
+                let barChartDisplay = new Chart(graphTarget, {
+                    type: 'line',
+                    data: chartdata
+                });
+                console.log(barChartDisplay);
+            });
+    }
+}
