@@ -21,21 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2c4d50d4-7ff1-4146-ba11-6c9e82c3ab58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusinesModelCanvas.md" beforeDir="false" afterPath="$PROJECT_DIR$/BusinesModelCanvas.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credentials.js" beforeDir="false" afterPath="$PROJECT_DIR$/credentials.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/js/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/Chart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/js/email.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/email.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/js/jquery-3.5.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/jquery-3.5.1.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sql/covidchecker.sql" beforeDir="false" afterPath="$PROJECT_DIR$/views/sql/covidchecker.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="graph_visual" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,6 +87,7 @@
         <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.main.js" />
+        <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
   </component>
@@ -119,7 +106,7 @@
       <workItem from="1615840966716" duration="877000" />
       <workItem from="1616369349007" duration="346000" />
       <workItem from="1616370300876" duration="14320000" />
-      <workItem from="1616972457145" duration="10471000" />
+      <workItem from="1616972457145" duration="11192000" />
     </task>
     <servers />
   </component>

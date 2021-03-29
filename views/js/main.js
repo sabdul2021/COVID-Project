@@ -142,7 +142,6 @@ $(document).ready(function () {
 
 function showLineGraph() {
     {
-        let graphTarget = $("#canvas");
         $.post("/exposure",
             function (data) {
                 console.log(data.data);
@@ -162,7 +161,7 @@ function showLineGraph() {
                     }]
                 };
 
-
+                let graphTarget = $("#canvas");
                 let barChartDisplay = new Chart(graphTarget, {
                     type: 'bar',
                     data: chartdata
