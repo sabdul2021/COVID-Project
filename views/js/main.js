@@ -162,11 +162,11 @@ function showLineGraph() {
                 };
 
                 let graphTarget = $("#canvas");
-                let barChartDisplay = new Chart(graphTarget, {
+
+                new Chart(graphTarget, {
                     type: 'bar',
                     data: chartdata
                 });
-                console.log(barChartDisplay);
             });
     }
 }
