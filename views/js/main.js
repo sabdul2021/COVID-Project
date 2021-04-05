@@ -94,6 +94,64 @@ $(function () {
             return false;
         }
 
+        if (document.getElementById(feverChills) = null {
+            alert('Please answer all questions');		
+        }
+
+        if (document.getElementById(underGrad) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(grad) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(staff) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(commuter) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(explainSymptoms) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(exposure) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(test) = null) {
+            alert('Plese answer all questions');		
+        }
+        if (document.getElementById(cough) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(breathing) = null) {
+            alert('Plese answer all questions');		
+        }
+        if (document.getElementById(lossOfTasteSmell) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(bodyAches) = null) {
+            alert('Plese answer all questions');		
+        }
+
+        if (document.getElementById(status) = null) {
+            alert('Plese answer all questions');		
+        }
+        if (document.getElementById(closeContact) = null) {
+            alert('Plese answer all questions');		
+        }
+       
+        if (document.getElementById(wearMask) = null) {
+            alert('Plese answer all questions');		
+        }
+
+
         $(document).ready(function(){
             $('input[name="commuter"]').change(function () {
                 if($(this).val() ==='1') {
@@ -180,7 +238,7 @@ function showLineGraph() {
                     labels: ["exposure"],
                     datasets: [{
                         label: 'Exposure',
-                        backgroundColor: '#1E90FF',
+                        backgroundColor: '#0C82F7',
                         borderColor: '#46d5f1',
                         hoverBorderColor: '#666666',
                         data: [exposure],
@@ -196,3 +254,69 @@ function showLineGraph() {
             });
     }
 }
+
+
+function showLineGraph1() {
+    {
+        $.post("/testResult",
+            function (data) {
+                console.log(data.data);
+                console.log((Object.keys((data.data))));
+                console.log(data.data[0]["SUM(testResult)"]);
+                let testResult = [0, data.data[0]["SUM(testResult)"], data.data[0]["today"]];
+
+                console.log(testResult);
+                let chartdata = {
+                    labels: ["testResult"],
+                    datasets: [{
+                        label: 'testResult',
+                        backgroundColor: '#95F308',
+                        borderColor: '#46d5f1',
+                        hoverBorderColor: '#666666',
+                        data: [testResult],
+                    }]
+                };
+
+                let graphTarget = $("#canvas");
+
+                new Chart(graphTarget, {
+                    type: 'bar',
+                    data: chartdata
+                });
+            });
+    }
+}
+
+
+function showLineGraph1() {
+    {
+        $.post("/quarantineStatus",
+            function (data) {
+                console.log(data.data);
+                console.log((Object.keys((data.data))));
+                console.log(data.data[0]["SUM(quarantineStatus)"]);
+                let quarantineStatus = [0, data.data[0]["SUM(quarantineStatus)"], data.data[0]["today"]];
+
+                console.log(quarantineStatus);
+                let chartdata = {
+                    labels: ["quarantineStatus"],
+                    datasets: [{
+                        label: 'quarantineStatus',
+                        backgroundColor: '#F36E08',
+                        borderColor: '#46d5f1',
+                        hoverBorderColor: '#666666',
+                        data: [quarantineStatus],
+                    }]
+                };
+
+                let graphTarget = $("#canvas");
+
+                new Chart(graphTarget, {
+                    type: 'bar',
+                    data: chartdata
+                });
+            });
+    }
+}
+
+
