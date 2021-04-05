@@ -110,7 +110,7 @@ function exposure(req, res) {
             return;
         }
         // query the database
-        conn.query("SELECT SUM(exposure) FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
+        conn.query("SELECT SUM(exposure), today FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {

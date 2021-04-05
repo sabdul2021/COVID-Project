@@ -21,6 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2c4d50d4-7ff1-4146-ba11-6c9e82c3ab58" name="Default Changelist" comment="fix the error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,6 +109,7 @@
       <workItem from="1616369349007" duration="346000" />
       <workItem from="1616370300876" duration="14320000" />
       <workItem from="1616972457145" duration="12425000" />
+      <workItem from="1617557725358" duration="5859000" />
     </task>
     <task id="LOCAL-00001" summary="fix the error">
       <created>1617053602663</created>

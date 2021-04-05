@@ -64,6 +64,45 @@ $(function () {
         let explainSymptoms = $("#explainSymptoms").val();
         let mask = Number($('input[name=wearMask]:checked', '#covidform').val());
 
+        if (universityId === "") {
+            alert("University ID is needed");
+            return false;
+        }
+
+        if (firstName === "") {
+            alert("first name is needed");
+            return false;
+        }
+
+        if (lastName === "") {
+            alert("last name is needed");
+            return false;
+        }
+
+        if (today === false) {
+            alert("date is needed");
+            return false;
+        }
+
+        if (email === "") {
+            alert("email is required");
+            return false;
+        }
+
+        if (explainSymptoms === "") {
+            alert("please explain any symptoms");
+            return false;
+        }
+
+        $(document).ready(function(){
+            $('input[name="commuter"]').change(function () {
+                if($(this).val() ==='1') {
+                    $('#underGrad').prop('required',true);
+                } else {
+                    $('#underGrad').prop('required',false);
+                }
+            });
+        });
 
         // more to added
         console.log("underGrad : " + underGrad);
@@ -122,19 +161,6 @@ $(function () {
 
 });
 
-let close = document.getElementsByClassName("closebtn");
-let i;
-
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-        let div = this.parentElement;
-        div.style.opacity = "0";
-        setTimeout(function () {
-            div.style.display = "none";
-        }, 600);
-        alert("Survey has been submitted");
-    }
-}
 
 $(document).ready(function () {
     showLineGraph();
@@ -147,7 +173,7 @@ function showLineGraph() {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
                 console.log(data.data[0]["SUM(exposure)"]);
-                let exposure = [0, data.data[0]["SUM(exposure)"]];
+                let exposure = [0, data.data[0]["SUM(exposure)"], data.data[0]["today"]];
 
                 console.log(exposure);
                 let chartdata = {
@@ -157,7 +183,7 @@ function showLineGraph() {
                         backgroundColor: '#1E90FF',
                         borderColor: '#46d5f1',
                         hoverBorderColor: '#666666',
-                        data: [exposure]
+                        data: [exposure],
                     }]
                 };
 
