@@ -94,61 +94,61 @@ $(function () {
             return false;
         }
 
-        if (document.getElementById(feverChills) = null {
-            alert('Please answer all questions');		
+        if (document.getElementById(feverChills.toString()) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(underGrad) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(underGrad) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(grad) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(grad) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(staff) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(staff) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(commuter) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(commuter.toString()) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(explainSymptoms) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(explainSymptoms) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(exposure) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(exposure.toString()) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(test) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(testResult.toString()) === null) {
+            alert('Please answer all questions');
         }
-        if (document.getElementById(cough) = null) {
-            alert('Plese answer all questions');		
-        }
-
-        if (document.getElementById(breathing) = null) {
-            alert('Plese answer all questions');		
-        }
-        if (document.getElementById(lossOfTasteSmell) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(cough.toString()) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(bodyAches) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(breathing.toString()) === null) {
+            alert('Please answer all questions');
+        }
+        if (document.getElementById(lossOfTasteSmell.toString()) === null) {
+            alert('Please answer all questions');
         }
 
-        if (document.getElementById(status) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(bodyAches.toString()) === null) {
+            alert('Please answer all questions');
         }
-        if (document.getElementById(closeContact) = null) {
-            alert('Plese answer all questions');		
+
+        if (document.getElementById(quarantineStatus.toString()) === null) {
+            alert('Please answer all questions');
+        }
+        if (document.getElementById(closeContact.toString()) === null) {
+            alert('Please answer all questions');
         }
        
-        if (document.getElementById(wearMask) = null) {
-            alert('Plese answer all questions');		
+        if (document.getElementById(mask.toString()) === null) {
+            alert('Please answer all questions');
         }
 
 
@@ -221,10 +221,12 @@ $(function () {
 
 
 $(document).ready(function () {
-    showLineGraph();
+    showLineGraph1();
+    showLineGraph2();
+    showLineGraph3();
 });
 
-function showLineGraph() {
+function showLineGraph1() {
     {
         $.post("/exposure",
             function (data) {
@@ -256,7 +258,7 @@ function showLineGraph() {
 }
 
 
-function showLineGraph1() {
+function showLineGraph2() {
     {
         $.post("/testResult",
             function (data) {
@@ -288,7 +290,7 @@ function showLineGraph1() {
 }
 
 
-function showLineGraph1() {
+function showLineGraph3() {
     {
         $.post("/quarantineStatus",
             function (data) {
