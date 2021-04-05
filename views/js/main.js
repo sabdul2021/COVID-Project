@@ -32,6 +32,28 @@ $(function () {
         }
     });
 
+    $.ajax({
+        type: "GET",
+        url: "/testResult",
+        success: function (json) {
+            console.log(json);
+        },
+        error: function () {
+            alert("error");
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "/quarantineStatus",
+        success: function (json) {
+            console.log(json);
+        },
+        error: function () {
+            alert("error");
+        }
+    });
+
 
     showUsers();
 
@@ -221,19 +243,19 @@ $(function () {
 
 
 $(document).ready(function () {
-    showLineGraph1();
-    showLineGraph2();
-    showLineGraph3();
+    showBarGraph1();
+    showBarGraph2();
+    showBarGraph3();
 });
 
-function showLineGraph1() {
+function showBarGraph1() {
     {
         $.post("/exposure",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
                 console.log(data.data[0]["SUM(exposure)"]);
-                let exposure = [0, data.data[0]["SUM(exposure)"], data.data[0]["today"]];
+                let exposure = [0, data.data[0]["SUM(exposure)"]];
 
                 console.log(exposure);
                 let chartdata = {
@@ -247,7 +269,7 @@ function showLineGraph1() {
                     }]
                 };
 
-                let graphTarget = $("#canvas");
+                let graphTarget = $("#canvas1");
 
                 new Chart(graphTarget, {
                     type: 'bar',
@@ -258,14 +280,14 @@ function showLineGraph1() {
 }
 
 
-function showLineGraph2() {
+function showBarGraph2() {
     {
-        $.post("/testResult",
+        $.post("/testResults",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
                 console.log(data.data[0]["SUM(testResult)"]);
-                let testResult = [0, data.data[0]["SUM(testResult)"], data.data[0]["today"]];
+                let testResult = [0, data.data[0]["SUM(testResult)"]];
 
                 console.log(testResult);
                 let chartdata = {
@@ -279,7 +301,7 @@ function showLineGraph2() {
                     }]
                 };
 
-                let graphTarget = $("#canvas");
+                let graphTarget = $("#canvas2");
 
                 new Chart(graphTarget, {
                     type: 'bar',
@@ -290,14 +312,14 @@ function showLineGraph2() {
 }
 
 
-function showLineGraph3() {
+function showBarGraph3() {
     {
         $.post("/quarantineStatus",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
                 console.log(data.data[0]["SUM(quarantineStatus)"]);
-                let quarantineStatus = [0, data.data[0]["SUM(quarantineStatus)"], data.data[0]["today"]];
+                let quarantineStatus = [0, data.data[0]["SUM(quarantineStatus)"]];
 
                 console.log(quarantineStatus);
                 let chartdata = {
@@ -311,7 +333,7 @@ function showLineGraph3() {
                     }]
                 };
 
-                let graphTarget = $("#canvas");
+                let graphTarget = $("#canvas3");
 
                 new Chart(graphTarget, {
                     type: 'bar',
