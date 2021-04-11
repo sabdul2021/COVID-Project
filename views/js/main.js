@@ -257,6 +257,7 @@ $(document).ready(function () {
     showBarGraph1();
     showBarGraph2();
     showBarGraph3();
+    showLineGraph4()
 });
 
 function showBarGraph1() {
@@ -354,4 +355,34 @@ function showBarGraph3() {
     }
 }
 
+function showLineGraph4() {
+    {
+        $.post("/exposure",
+            function (data) {
+                console.log(data.data);
+                console.log((Object.keys((data.data))));
+                console.log(data.data[0]["SUM(exposure)"]);
 
+                let exposure = [0, data.data[0]["SUM(exposure)"], data.data[0]["today"]];
+
+                let chartdata = {
+                    labels: ["Exposure"],
+                    datasets: [{
+                        label: 'Exposure',
+                        backgroundColor: '#F36E08',
+                        borderColor: '#46d5f1',
+                        hoverBorderColor: '#666666',
+                        data: [exposure],
+                    }]
+                };
+
+                let graphTarget = $("#canvas4");
+
+                new Chart(graphTarget, {
+                    type: 'line',
+                    data: chartdata
+                });
+            });
+
+    }
+}

@@ -114,7 +114,7 @@ function exposure(req, res) {
             return;
         }
         // query the database
-        conn.query("SELECT SUM(exposure) FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
+        conn.query("SELECT SUM(exposure), today FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {
@@ -143,7 +143,7 @@ function test_results(req, res) {
             return;
         }
         // query the database
-        conn.query("SELECT SUM(testResult) FROM STUDENT_STAFF WHERE testResult = 1", function (err, rows) {
+        conn.query("SELECT SUM(testResult), today FROM STUDENT_STAFF WHERE testResult = 1", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {
@@ -172,7 +172,7 @@ function quarantine_status(req, res) {
             return;
         }
         // query the database
-        conn.query("SELECT SUM(quarantineStatus) FROM STUDENT_STAFF WHERE quarantineStatus = 1", function (err, rows) {
+        conn.query("SELECT SUM(quarantineStatus), today FROM STUDENT_STAFF WHERE quarantineStatus = 1", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {

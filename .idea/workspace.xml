@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c4d50d4-7ff1-4146-ba11-6c9e82c3ab58" name="Default Changelist" comment="fix the error">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c00cda2b-7228-4561-bba6-da48418cbe90.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c00cda2b-7228-4561-bba6-da48418cbe90.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +112,7 @@
       <workItem from="1617557725358" duration="6368000" />
       <workItem from="1617653329429" duration="2402000" />
       <workItem from="1617830831595" duration="864000" />
-      <workItem from="1618096915611" duration="5523000" />
+      <workItem from="1618096915611" duration="8841000" />
     </task>
     <task id="LOCAL-00001" summary="fix the error">
       <created>1617053602663</created>
