@@ -34,7 +34,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/testResult",
+        url: "/test_results",
         success: function (json) {
             console.log(json);
         },
@@ -45,7 +45,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/quarantineStatus",
+        url: "/quarantine_status",
         success: function (json) {
             console.log(json);
         },
@@ -116,70 +116,81 @@ $(function () {
             return false;
         }
 
-        if (document.getElementById(feverChills.toString()) === null) {
+        if (!commuter) {
             alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(underGrad) === null) {
+        if (!exposure) {
             alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(grad) === null) {
+        if (!testResult) {
             alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(staff) === null) {
+        if (!cough) {
             alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(commuter.toString()) === null) {
+        if (!breathing) {
             alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(explainSymptoms) === null) {
+        if (!lossOfTasteSmell) {
             alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(exposure.toString()) === null) {
+        if (!bodyAches) {
             alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(testResult.toString()) === null) {
+        if (!quarantineStatus) {
             alert('Please answer all questions');
-        }
-        if (document.getElementById(cough.toString()) === null) {
-            alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(breathing.toString()) === null) {
+        if (!closeContact) {
             alert('Please answer all questions');
-        }
-        if (document.getElementById(lossOfTasteSmell.toString()) === null) {
-            alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(bodyAches.toString()) === null) {
+        if (!mask) {
             alert('Please answer all questions');
+            return false;
         }
 
-        if (document.getElementById(quarantineStatus.toString()) === null) {
-            alert('Please answer all questions');
-        }
-        if (document.getElementById(closeContact.toString()) === null) {
-            alert('Please answer all questions');
-        }
-       
-        if (document.getElementById(mask.toString()) === null) {
-            alert('Please answer all questions');
-        }
+        $(document).ready(function () {
+            $('#covidform').click(function () {
+                underGrad = $("input[type=checkbox]:checked").length;
+                grad = $("input[type=checkbox]:checked").length;
+                faculty = $("input[type=checkbox]:checked").length;
+                staff = $("input[type=checkbox]:checked").length;
 
+                if (!underGrad) {
+                    alert("You must check at least one checkbox.");
+                    return false;
+                }
 
-        $(document).ready(function(){
-            $('input[name="commuter"]').change(function () {
-                if($(this).val() ==='1') {
-                    $('#underGrad').prop('required',true);
-                } else {
-                    $('#underGrad').prop('required',false);
+                if (!grad) {
+                    alert("You must check at least one checkbox.");
+                    return false;
+                }
+
+                if (!faculty) {
+                    alert("You must check at least one checkbox.");
+                    return false;
+                }
+
+                if (!staff) {
+                    alert("You must check at least one checkbox.");
+                    return false;
                 }
             });
         });
@@ -282,7 +293,7 @@ function showBarGraph1() {
 
 function showBarGraph2() {
     {
-        $.post("/testResults",
+        $.post("/test_results",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
@@ -293,7 +304,7 @@ function showBarGraph2() {
                 let chartdata = {
                     labels: ["testResult"],
                     datasets: [{
-                        label: 'testResult',
+                        label: 'TestResult',
                         backgroundColor: '#95F308',
                         borderColor: '#46d5f1',
                         hoverBorderColor: '#666666',
@@ -314,7 +325,7 @@ function showBarGraph2() {
 
 function showBarGraph3() {
     {
-        $.post("/quarantineStatus",
+        $.post("/quarantine_status",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
@@ -325,7 +336,7 @@ function showBarGraph3() {
                 let chartdata = {
                     labels: ["quarantineStatus"],
                     datasets: [{
-                        label: 'quarantineStatus',
+                        label: 'Quarantine Status',
                         backgroundColor: '#F36E08',
                         borderColor: '#46d5f1',
                         hoverBorderColor: '#666666',
