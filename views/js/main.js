@@ -34,7 +34,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/testResult",
+        url: "/test_results",
         success: function (json) {
             console.log(json);
         },
@@ -45,7 +45,18 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/quarantineStatus",
+        url: "/quarantine_status",
+        success: function (json) {
+            console.log(json);
+        },
+        error: function () {
+            alert("error");
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "/exposure_timeline",
         success: function (json) {
             console.log(json);
         },
@@ -112,77 +123,64 @@ $(function () {
         }
 
         if (explainSymptoms === "") {
-            alert("please explain any symptoms");
+            alert("please explain any symptoms you are experiencing");
             return false;
         }
 
-        if (document.getElementById(feverChills.toString()) === null) {
-            alert('Please answer all questions');
+        if (isNaN(commuter)) {
+            alert('Please answer if you commute or not');
+            return false;
         }
 
-        if (document.getElementById(underGrad) === null) {
-            alert('Please answer all questions');
+        if (isNaN(exposure)) {
+            alert('Please answer if you have been exposed');
+            return false;
         }
 
-        if (document.getElementById(grad) === null) {
-            alert('Please answer all questions');
+        if (isNaN(testResult)) {
+            alert('Please answer if you receive your test results');
+            return false;
         }
 
-        if (document.getElementById(staff) === null) {
-            alert('Please answer all questions');
+        if (isNaN(feverChills)) {
+            alert('Please answer if you have experience fever or chills');
+            return false;
         }
 
-        if (document.getElementById(commuter.toString()) === null) {
-            alert('Please answer all questions');
+        if (isNaN(cough)) {
+            alert('Please answer if you experience any sign of coughing');
+            return false;
         }
 
-        if (document.getElementById(explainSymptoms) === null) {
-            alert('Please answer all questions');
+        if (isNaN(breathing)) {
+            alert('Please answer if you having trouble breathing');
+            return false;
         }
 
-        if (document.getElementById(exposure.toString()) === null) {
-            alert('Please answer all questions');
+        if (isNaN(lossOfTasteSmell)) {
+            alert('Please answer if you have loss of taste or smell');
+            return false;
         }
 
-        if (document.getElementById(testResult.toString()) === null) {
-            alert('Please answer all questions');
-        }
-        if (document.getElementById(cough.toString()) === null) {
-            alert('Please answer all questions');
+        if (isNaN(bodyAches)) {
+            alert('Please answer if you experience any body aches');
+            return false;
         }
 
-        if (document.getElementById(breathing.toString()) === null) {
-            alert('Please answer all questions');
-        }
-        if (document.getElementById(lossOfTasteSmell.toString()) === null) {
-            alert('Please answer all questions');
+        if (isNaN(quarantineStatus)) {
+            alert('Please answer if you have been in quarantine lately');
+            return false;
         }
 
-        if (document.getElementById(bodyAches.toString()) === null) {
-            alert('Please answer all questions');
+        if (isNaN(mask)) {
+            alert('Please answer if you recently are wearing mask or not');
+            return false;
         }
 
-        if (document.getElementById(quarantineStatus.toString()) === null) {
-            alert('Please answer all questions');
+        if (isNaN(closeContact)) {
+            alert('Please answer if you have been in close contact with anyone in mind');
+            return false;
         }
-        if (document.getElementById(closeContact.toString()) === null) {
-            alert('Please answer all questions');
-        }
-       
-        if (document.getElementById(mask.toString()) === null) {
-            alert('Please answer all questions');
-        }
-
-
-        $(document).ready(function(){
-            $('input[name="commuter"]').change(function () {
-                if($(this).val() ==='1') {
-                    $('#underGrad').prop('required',true);
-                } else {
-                    $('#underGrad').prop('required',false);
-                }
-            });
-        });
 
         // more to added
         console.log("underGrad : " + underGrad);
@@ -246,6 +244,7 @@ $(document).ready(function () {
     showBarGraph1();
     showBarGraph2();
     showBarGraph3();
+    showLineGraph4()
 });
 
 function showBarGraph1() {
@@ -282,7 +281,7 @@ function showBarGraph1() {
 
 function showBarGraph2() {
     {
-        $.post("/testResults",
+        $.post("/test_results",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
@@ -293,7 +292,7 @@ function showBarGraph2() {
                 let chartdata = {
                     labels: ["testResult"],
                     datasets: [{
-                        label: 'testResult',
+                        label: 'TestResult',
                         backgroundColor: '#95F308',
                         borderColor: '#46d5f1',
                         hoverBorderColor: '#666666',
@@ -314,7 +313,7 @@ function showBarGraph2() {
 
 function showBarGraph3() {
     {
-        $.post("/quarantineStatus",
+        $.post("/quarantine_status",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
@@ -325,7 +324,7 @@ function showBarGraph3() {
                 let chartdata = {
                     labels: ["quarantineStatus"],
                     datasets: [{
-                        label: 'quarantineStatus',
+                        label: 'Quarantine Status',
                         backgroundColor: '#F36E08',
                         borderColor: '#46d5f1',
                         hoverBorderColor: '#666666',
@@ -343,4 +342,41 @@ function showBarGraph3() {
     }
 }
 
+function showLineGraph4() {
+    {
+        $.post("/exposure_timeline",
+            function (data) {
+                console.log(data.data);
+                console.log((Object.keys((data.data))));
+                console.log(data.data[0]["SUM(exposure)"]);
 
+                let exposure = [0, data.data[0]["SUM(exposure)"], data.data[0]["today"]];
+                let today = [data.data[0]["today"], data.data[2]["today"]];
+
+                for (let i in data) {
+                    if (data.hasOwnProperty(i)) {
+                        exposure.push(data[i].exposure);
+                    }
+                }
+
+                let chartdata = {
+                    labels: today,
+                    datasets: [{
+                        label: 'Exposure',
+                        backgroundColor: '#F36E08',
+                        borderColor: '#46d5f1',
+                        hoverBorderColor: '#666666',
+                        data: exposure,
+                    }]
+                };
+
+                let graphTarget = $("#canvas4");
+
+                new Chart(graphTarget, {
+                    type: 'line',
+                    data: chartdata
+                });
+            });
+
+    }
+}

@@ -11,12 +11,14 @@ http.createServer(function (req, res) {
             users(req, res);
         } else if (path === "/exposure") {
             exposure(req, res);
-        }  else if (path === "/testResults") {
-            testResults(req, res);
-        } else if (path === "/quarantineStatus") {
-            quarantineStatus(req, res);
+        } else if (path === "/test_results") {
+            test_results(req, res);
+        } else if (path === "/quarantine_status") {
+            quarantine_status(req, res);
         } else if (path === "/add_user") {
             addUser(req, res);
+        } else if (path === "/exposure_timeline") {
+            exposure_timeline(req, res);
         } else {
             serveStaticFile(res, path);
         }
@@ -114,7 +116,7 @@ function exposure(req, res) {
             return;
         }
         // query the database
-        conn.query("SELECT SUM(exposure) FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
+        conn.query("SELECT SUM(exposure), today FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {
@@ -134,7 +136,7 @@ function exposure(req, res) {
     });
 }
 
-function testResults(req, res) {
+function exposure_timeline(req, res) {
     let conn = mysql.createConnection(credentials.connection);
     // connect to database
     conn.connect(function (err) {
@@ -143,7 +145,7 @@ function testResults(req, res) {
             return;
         }
         // query the database
-        conn.query("SELECT SUM(testResult) FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
+        conn.query("SELECT SUM(exposure), today FROM STUDENT_STAFF WHERE exposure = 1 GROUP BY today", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {
@@ -163,7 +165,7 @@ function testResults(req, res) {
     });
 }
 
-function quarantineStatus(req, res) {
+function test_results(req, res) {
     let conn = mysql.createConnection(credentials.connection);
     // connect to database
     conn.connect(function (err) {
@@ -172,7 +174,36 @@ function quarantineStatus(req, res) {
             return;
         }
         // query the database
-        conn.query("SELECT SUM(quarantineStatus) FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
+        conn.query("SELECT SUM(testResult), today FROM STUDENT_STAFF WHERE testResult = 1", function (err, rows) {
+            // build json result object
+            let outjson = {};
+            if (err) {
+                // query failed
+                outjson.success = false;
+                outjson.message = "Query failed: " + err;
+            } else {
+                // query successful
+                outjson.success = true;
+                outjson.message = "Query successful!";
+                outjson.data = rows;
+            }
+            // return json object that contains the result of the query
+            sendResponse(req, res, outjson);
+        });
+        conn.end();
+    });
+}
+
+function quarantine_status(req, res) {
+    let conn = mysql.createConnection(credentials.connection);
+    // connect to database
+    conn.connect(function (err) {
+        if (err) {
+            console.error("ERROR: cannot connect: " + err);
+            return;
+        }
+        // query the database
+        conn.query("SELECT SUM(quarantineStatus), today FROM STUDENT_STAFF WHERE quarantineStatus = 1", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {
