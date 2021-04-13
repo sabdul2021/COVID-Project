@@ -1,0 +1,17 @@
+POST http://localhost/table_data
+
+###
+
+GET http://localhost:80/api/item?id=99
+Accept: application/json
+
+###
+
+POST http://localhost/table_data
+
+###
+
+POST http://localhost/table_data
+
+###
+

@@ -332,15 +332,6 @@ function showLineGraph() {
                 console.log((Object.keys((data.data))));
                 console.log(data.data[0]["SUM(exposure)"]);
 
-                // let exposure = [0, data.data[0]["SUM(exposure)"], data.data[0]["today"]];
-                // let today = [data.data[0]["today"]];
-
-                // for (let i in data) {
-                //     if (data.hasOwnProperty(i)) {
-                //         exposure.push(data[i].exposure);
-                //         today.push(data[i].today);
-                //     }
-                // }
                 let exposure = [];
                 let today = [];
                 for (let i = 0; i < data.data.length; i++) {
@@ -373,7 +364,7 @@ function showLineGraph() {
 }
 
 function showTable() {
-    $.post("/table_data",
+    $.get("/table_data",
         function (data) {
             console.log(data);
             $(data.data).each(function (i, dataShown) {
