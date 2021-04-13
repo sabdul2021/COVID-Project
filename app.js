@@ -19,6 +19,8 @@ http.createServer(function (req, res) {
             addUser(req, res);
         } else if (path === "/exposure_timeline") {
             exposure_timeline(req, res);
+        } else if (path === "/table_data") {
+            table_data(req, res);
         } else {
             serveStaticFile(res, path);
         }
@@ -117,6 +119,35 @@ function exposure(req, res) {
         }
         // query the database
         conn.query("SELECT SUM(exposure), today FROM STUDENT_STAFF WHERE exposure = 1", function (err, rows) {
+            // build json result object
+            let outjson = {};
+            if (err) {
+                // query failed
+                outjson.success = false;
+                outjson.message = "Query failed: " + err;
+            } else {
+                // query successful
+                outjson.success = true;
+                outjson.message = "Query successful!";
+                outjson.data = rows;
+            }
+            // return json object that contains the result of the query
+            sendResponse(req, res, outjson);
+        });
+        conn.end();
+    });
+}
+
+function table_data(req, res) {
+    let conn = mysql.createConnection(credentials.connection);
+    // connect to database
+    conn.connect(function (err) {
+        if (err) {
+            console.error("ERROR: cannot connect: " + err);
+            return;
+        }
+        // query the database
+        conn.query("SELECT universityId, firstName, lastName, email, exposure, testResult FROM STUDENT_STAFF", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {

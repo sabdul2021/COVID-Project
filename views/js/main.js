@@ -65,6 +65,16 @@ $(function () {
         }
     });
 
+    $.ajax({
+        type: "GET",
+        url: "/table_data",
+        success: function (json) {
+            console.log(json);
+        },
+        error: function () {
+            alert("error");
+        }
+    });
 
     showUsers();
 
@@ -241,30 +251,31 @@ $(function () {
 
 
 $(document).ready(function () {
-    showBarGraph1();
-    showBarGraph2();
-    showBarGraph3();
-    showLineGraph4()
+    showBarGraph();
+    showLineGraph();
+    showTable();
 });
 
-function showBarGraph1() {
-    {
-        $.post("/exposure",
-            function (data) {
+function showBarGraph() {
+    $.post("/exposure", function (data) {
+        $.post("/test_results", function (test_data) {
+            $.post("/quarantine_status", function (survey_data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
                 console.log(data.data[0]["SUM(exposure)"]);
                 let exposure = [0, data.data[0]["SUM(exposure)"]];
+                let testResult = [0, test_data.data[0]["SUM(testResult)"]];
+                let quarantineStatus = [0, survey_data.data[0]["SUM(quarantineStatus)"]];
 
                 console.log(exposure);
                 let chartdata = {
-                    labels: ["exposure"],
+                    labels: ["Exposure ", "Test Result ", "Quarantine Status "],
                     datasets: [{
-                        label: 'Exposure',
-                        backgroundColor: '#0C82F7',
-                        borderColor: '#46d5f1',
-                        hoverBorderColor: '#666666',
-                        data: [exposure],
+                        label: ["Exposure ", "Test Result ", "Quarantine Status "],
+                        backgroundColor: ['#0C82F7', '#95F308', '#F36E08'],
+                        borderColor: ['#0C82F7'],
+                        hoverBorderColor: ['#0C82F7', '#95F308', '#F36E08'],
+                        data: [exposure, testResult, quarantineStatus],
                     }]
                 };
 
@@ -275,74 +286,45 @@ function showBarGraph1() {
                     data: chartdata
                 });
             });
-    }
+        });
+    });
 }
 
 
-function showBarGraph2() {
-    {
-        $.post("/test_results",
-            function (data) {
-                console.log(data.data);
-                console.log((Object.keys((data.data))));
-                console.log(data.data[0]["SUM(testResult)"]);
-                let testResult = [0, data.data[0]["SUM(testResult)"]];
+// function showBarGraph2() {
+//     {
+//         $.post("/test_results",
+//             function (data) {
+//                 console.log(data.data);
+//                 console.log((Object.keys((data.data))));
+//                 console.log(data.data[0]["SUM(testResult)"]);
+//                 let testResult = [0, data.data[0]["SUM(testResult)"]];
+//
+//
+//                 console.log(testResult);
+//                 let chartdata = {
+//                     labels: ["testResult"],
+//                     datasets: [{
+//                         label: 'TestResult',
+//                         backgroundColor: '#95F308',
+//                         borderColor: '#46d5f1',
+//                         hoverBorderColor: '#666666',
+//                         data: [testResult],
+//                     }]
+//                 };
+//
+//                 let graphTarget = $("#canvas2");
+//
+//                 new Chart(graphTarget, {
+//                     type: 'bar',
+//                     data: chartdata
+//                 });
+//             });
+//     }
+// }
+//
 
-                console.log(testResult);
-                let chartdata = {
-                    labels: ["testResult"],
-                    datasets: [{
-                        label: 'TestResult',
-                        backgroundColor: '#95F308',
-                        borderColor: '#46d5f1',
-                        hoverBorderColor: '#666666',
-                        data: [testResult],
-                    }]
-                };
-
-                let graphTarget = $("#canvas2");
-
-                new Chart(graphTarget, {
-                    type: 'bar',
-                    data: chartdata
-                });
-            });
-    }
-}
-
-
-function showBarGraph3() {
-    {
-        $.post("/quarantine_status",
-            function (data) {
-                console.log(data.data);
-                console.log((Object.keys((data.data))));
-                console.log(data.data[0]["SUM(quarantineStatus)"]);
-                let quarantineStatus = [0, data.data[0]["SUM(quarantineStatus)"]];
-
-                console.log(quarantineStatus);
-                let chartdata = {
-                    labels: ["quarantineStatus"],
-                    datasets: [{
-                        label: 'Quarantine Status',
-                        backgroundColor: '#F36E08',
-                        borderColor: '#46d5f1',
-                        hoverBorderColor: '#666666',
-                        data: [quarantineStatus],
-                    }]
-                };
-
-                let graphTarget = $("#canvas3");
-
-                new Chart(graphTarget, {
-                    type: 'bar',
-                    data: chartdata
-                });
-            });
-    }
-}
-
-function showLineGraph4() {
+function showLineGraph() {
     {
         $.post("/exposure_timeline",
             function (data) {
@@ -350,14 +332,23 @@ function showLineGraph4() {
                 console.log((Object.keys((data.data))));
                 console.log(data.data[0]["SUM(exposure)"]);
 
-                let exposure = [0, data.data[0]["SUM(exposure)"], data.data[0]["today"]];
-                let today = [data.data[0]["today"], data.data[2]["today"]];
+                // let exposure = [0, data.data[0]["SUM(exposure)"], data.data[0]["today"]];
+                // let today = [data.data[0]["today"]];
 
-                for (let i in data) {
-                    if (data.hasOwnProperty(i)) {
-                        exposure.push(data[i].exposure);
-                    }
+                // for (let i in data) {
+                //     if (data.hasOwnProperty(i)) {
+                //         exposure.push(data[i].exposure);
+                //         today.push(data[i].today);
+                //     }
+                // }
+                let exposure = [];
+                let today = [];
+                for (let i = 0; i < data.data.length; i++) {
+                    exposure.push(data.data[i]["SUM(exposure)"]);
+                    today.push(data.data[i]["today"]);
                 }
+                console.log(exposure);
+                console.log(today);
 
                 let chartdata = {
                     labels: today,
@@ -379,4 +370,20 @@ function showLineGraph4() {
             });
 
     }
+}
+
+function showTable() {
+    $.get("/table_data",
+        function (data) {
+            console.log(data);
+            $(data.data).each(function (i, dataShown) {
+                $('#dataBody').append($("<tr>")
+                    .append($("<td>").append(dataShown.universityId))
+                    .append($("<td>").append(dataShown.firstName))
+                    .append($("<td>").append(dataShown.lastName))
+                    .append($("<td>").append(dataShown.email))
+                    .append($("<td>").append(dataShown.exposure))
+                    .append($("<td>").append(dataShown.testResult)))
+            });
+        });
 }
