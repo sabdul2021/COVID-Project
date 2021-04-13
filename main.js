@@ -398,7 +398,7 @@ function showPieGraph() {
             //need help to verify
             for(let i=0; i<data.data.length; i++){
               if(commuter === 0){
-                var non_commuter = []+1;
+                 non_commuter +=i;
               }
             }
 
@@ -428,12 +428,12 @@ function showPieGraph() {
       {
         $.post("/exposure_community",
             function (data) {
-                console.log(data.data);
-                console.log((Object.keys((data.data))));
-                console.log(data.data[0]["SUM(exposure)"]);
+                //console.log(data.data);
+                //console.log((Object.keys((data.data))));
+                //console.log(data.data[0]["SUM(exposure)"]);
 
-                let exposure = [];
-                console.log(exposure);
+                //let exposure = [];
+                //console.log(exposure);
 
                 let chartdata = {
                     labels: ["Undergraduate", "Graduate", "Faculty", "Staff"],
