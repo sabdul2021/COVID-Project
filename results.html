@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
@@ -11,8 +11,7 @@
     <meta name="description" content="">
 
 
-    <title>Admins Page</title>
-    <link rel="stylesheet" href="css/home.css">
+    <title>Results</title>
     <link rel="stylesheet" href="assets/tether/tether.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -57,6 +56,8 @@
                     </li>
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="about.html">About</a>
                     </li>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="results.html">Results</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -70,27 +71,30 @@
     <div class="container">
         <div class="card border-5 shadow my-5">
             <div class="card-body p-4">
-                <h1 class="middle text-center">Exposure Data over time</h1>
-                <canvas id="canvas4"></canvas>
+                <h1 class="middle text-center">Exposure Data</h1>
+                <canvas id="canvas1"></canvas>
             </div>
         </div>
     </div>
 
     <div class="container">
         <div class="card border-5 shadow my-5">
-            <table class="table table-dark" id="dataTable">
-                <thead>
-                <th>University Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Exposure</th>
-                <th>Test Result</th>
-                </thead>
-                <tbody id="dataBody"></tbody>
-            </table>
+            <div class="card-body p-4">
+                <h1 class="middle text-center">Commuter vs Non-Commuter Exposure Breakdown</h1>
+                <canvas id="canvas5"></canvas>
+            </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="card border-5 shadow my-5">
+            <div class="card-body p-4">
+                <h1 class="middle text-center">Community Member Exposure Breakdown</h1>
+                <canvas id="canvas6"></canvas>
+            </div>
+        </div>
+    </div>
+
 
 </section>
 
