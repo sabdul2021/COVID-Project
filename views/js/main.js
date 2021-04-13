@@ -375,7 +375,8 @@ function showLineGraph() {
 function showTable() {
     $.get("/table_data",
         function (data) {
-            $(data).each(function (i, dataShown) {
+            console.log(data);
+            $(data.data).each(function (i, dataShown) {
                 $('#dataBody').append($("<tr>")
                     .append($("<td>").append(dataShown.universityId))
                     .append($("<td>").append(dataShown.firstName))
