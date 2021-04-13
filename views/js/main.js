@@ -373,7 +373,7 @@ function showLineGraph() {
 }
 
 function showTable() {
-    $.get("/table_data",
+    $.post("/table_data",
         function (data) {
             console.log(data);
             $(data.data).each(function (i, dataShown) {
