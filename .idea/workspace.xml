@@ -20,7 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c4d50d4-7ff1-4146-ba11-6c9e82c3ab58" name="Default Changelist" comment="fix the error">
-      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/results.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,5 +148,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="fix the error" />
     <option name="LAST_COMMIT_MESSAGE" value="fix the error" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/views/js/main.js</url>
+          <line>289</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
