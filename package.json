@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/sabdul2021/COVID-Project/issues"
   },
-  "homepage": "https://github.com/sabdul2021/COVID-Project#readme"
+  "homepage": "https://github.com/sabdul2021/COVID-Project#readme",
+  "devDependencies": {
+    "nodemailer": "^6.5.0"
+  }
 }
