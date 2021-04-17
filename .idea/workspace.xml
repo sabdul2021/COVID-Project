@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2c4d50d4-7ff1-4146-ba11-6c9e82c3ab58" name="Default Changelist" comment="fix the error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="adding_new_freatures" />
+        <entry key="$PROJECT_DIR$" value="Sabrina-Dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,7 +62,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.20.7" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.20.10" />
     <property name="js.last.introduce.type" value="LET" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -79,7 +80,7 @@
       <recent name="$PROJECT_DIR$/documentation" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="HTTP Request.generated-requests#1">
     <configuration name="generated-requests#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -88,8 +89,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests#1" />
         <item itemvalue="Node.js.main.js" />
+        <item itemvalue="HTTP Request.generated-requests#1" />
+        <item itemvalue="HTTP Request.generated-requests#1" />
         <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.main.js" />
       </list>
@@ -116,6 +118,10 @@
       <workItem from="1617830831595" duration="864000" />
       <workItem from="1618096915611" duration="9205000" />
       <workItem from="1618258814709" duration="2773000" />
+      <workItem from="1618416458720" duration="511000" />
+      <workItem from="1618505800317" duration="222000" />
+      <workItem from="1618601223475" duration="351000" />
+      <workItem from="1618607594398" duration="13064000" />
     </task>
     <task id="LOCAL-00001" summary="fix the error">
       <created>1617053602663</created>

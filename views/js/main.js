@@ -76,6 +76,28 @@ $(function () {
         }
     });
 
+    $.ajax({
+        type: "GET",
+        url: "/academic_data",
+        success: function (json) {
+            console.log(json);
+        },
+        error: function () {
+            alert("error");
+        }
+    });
+
+    $.ajax({
+        type: "GET",
+        url: "/commuter_data",
+        success: function (json) {
+            console.log(json);
+        },
+        error: function () {
+            alert("error");
+        }
+    });
+
     showUsers();
 
     $("#submit_button").click(function () {
@@ -254,6 +276,8 @@ $(document).ready(function () {
     showBarGraph();
     showLineGraph();
     showTable();
+    showAcademicPieChart();
+    showCommuterPieGraph()
 });
 
 function showBarGraph() {
@@ -289,40 +313,6 @@ function showBarGraph() {
         });
     });
 }
-
-
-// function showBarGraph2() {
-//     {
-//         $.post("/test_results",
-//             function (data) {
-//                 console.log(data.data);
-//                 console.log((Object.keys((data.data))));
-//                 console.log(data.data[0]["SUM(testResult)"]);
-//                 let testResult = [0, data.data[0]["SUM(testResult)"]];
-//
-//
-//                 console.log(testResult);
-//                 let chartdata = {
-//                     labels: ["testResult"],
-//                     datasets: [{
-//                         label: 'TestResult',
-//                         backgroundColor: '#95F308',
-//                         borderColor: '#46d5f1',
-//                         hoverBorderColor: '#666666',
-//                         data: [testResult],
-//                     }]
-//                 };
-//
-//                 let graphTarget = $("#canvas2");
-//
-//                 new Chart(graphTarget, {
-//                     type: 'bar',
-//                     data: chartdata
-//                 });
-//             });
-//     }
-// }
-//
 
 function showLineGraph() {
     {
@@ -377,4 +367,77 @@ function showTable() {
                     .append($("<td>").append(dataShown.testResult)))
             });
         });
+}
+
+function showCommuterPieGraph() {
+    {
+        $.post("/commuter_data",
+            function (data) {
+                let labels = [];
+                let counts = [];
+                let i;
+                for (i = 0; i < data.data.length; i++) {
+                    labels.push(data.data[i]["commuter"]);
+                    counts.push(data.data[i]["COUNT(commuter)"]);
+                }
+
+                let chartdata = {
+                    labels: ["Non-Commuter", "Commuter"],
+                    datasets: [{
+                        label: labels,
+                        backgroundColor: ["#009cff", "#ff0000"],
+                        borderColor: ["#009aff", "#ff0000"],
+                        hoverBorderColor: ["#009cff", "#ff0000"],
+                        data: counts
+                    }]
+                };
+                let graphTarget = $("#canvas5");
+                new Chart(graphTarget, {
+                    type: 'pie',
+                    data: chartdata
+                });
+            });
+    }
+}
+
+function showAcademicPieChart() {
+    {
+        $.post("/academic_data",
+            function (data) {
+                console.log(data.data);
+                console.log((Object.keys((data.data))));
+
+                let underGrad = [];
+                let grad = [];
+                let faculty = [];
+                let staff = [];
+
+                for (let i = 0; i < data.data.length; i++) {
+                    underGrad.push(data.data[i]["SUM(underGrad)"]);
+                    grad.push(data.data[i]["SUM(grad)"]);
+                    faculty.push(data.data[i]["SUM(faculty)"]);
+                    staff.push(data.data[i]["SUM(staff)"]);
+                }
+
+                console.log(underGrad);
+                console.log(grad);
+                console.log(faculty);
+                console.log(staff);
+                let chartdata = {
+                    labels: ["Undergraduate", "Graduate", "Faculty", "Staff"],
+                    datasets: [{
+                        label: ["Undergraduate", "Graduate", "Faculty", "Staff"],
+                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9"],
+                        borderColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9"],
+                        hoverBorderColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9"],
+                        data: [underGrad, grad, faculty, staff],
+                    }]
+                };
+                let graphTarget = $("#canvas6");
+                new Chart(graphTarget, {
+                    type: 'pie',
+                    data: chartdata
+                });
+            });
+    }
 }
