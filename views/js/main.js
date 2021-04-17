@@ -373,25 +373,22 @@ function showCommuterPieGraph() {
     {
         $.post("/commuter_data",
             function (data) {
-                //console.log(data.data);
-                //console.log((Object.keys((data.data))));
-                //  console.log(data.data[0]["SUM(exposure)"]);
-                //  let exposure = [];
-                //  console.log(exposure);
-                //need help to verify
-                let commuter = [];
-                for (let i = 0; i < data.data.length; i++) {
-                    commuter.push(data.data[i]["commuter"])
+                let labels = [];
+                let counts = [];
+                let i;
+                for (i = 0; i < data.data.length; i++) {
+                    labels.push(data.data[i]["commuter"]);
+                    counts.push(data.data[i]["COUNT(commuter)"]);
                 }
+
                 let chartdata = {
-                    labels: ["Commuter"],
+                    labels: ["Non-Commuter", "Commuter"],
                     datasets: [{
-                        label: ["Commuter"],
-                        backgroundColor: ["#3e95cd"],
-                        borderColor: ["#3e95cd"],
-                        hoverBorderColor: ["#3e95cd"],
-                        //this will only just return the commuters that were a 1 vs providing if commuter non commuter
-                        data: [commuter],
+                        label: labels,
+                        backgroundColor: ["#009cff", "#ff0000"],
+                        borderColor: ["#009aff", "#ff0000"],
+                        hoverBorderColor: ["#009cff", "#ff0000"],
+                        data: counts
                     }]
                 };
                 let graphTarget = $("#canvas5");

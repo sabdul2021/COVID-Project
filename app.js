@@ -209,7 +209,7 @@ function commuter_data(req, res) {
             return;
         }
         // query the database
-        conn.query("SELECT commuter, CASE WHEN `commuter` = 1 THEN 'YES' ELSE 'NO' END AS `commuter` FROM STUDENT_STAFF", function (err, rows) {
+        conn.query("SELECT COUNT(commuter), IF(commuter = 1, 'YES', 'NO') AS commuter FROM STUDENT_STAFF GROUP BY commuter;", function (err, rows) {
             // build json result object
             let outjson = {};
             if (err) {
