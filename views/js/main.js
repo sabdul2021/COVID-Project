@@ -281,9 +281,9 @@ $(document).ready(function () {
 });
 
 function showBarGraph() {
-    $.post("/exposure", function (data) {
-        $.post("/test_results", function (test_data) {
-            $.post("/quarantine_status", function (survey_data) {
+    $.post("exposure", function (data) {
+        $.post("test_results", function (test_data) {
+            $.post("quarantine_status", function (survey_data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
                 console.log(data.data[0]["SUM(exposure)"]);
@@ -316,7 +316,7 @@ function showBarGraph() {
 
 function showLineGraph() {
     {
-        $.post("/exposure_timeline",
+        $.post("exposure_timeline",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
@@ -354,7 +354,7 @@ function showLineGraph() {
 }
 
 function showTable() {
-    $.get("/table_data",
+    $.get("table_data",
         function (data) {
             console.log(data);
             $(data.data).each(function (i, dataShown) {
@@ -371,7 +371,7 @@ function showTable() {
 
 function showCommuterPieGraph() {
     {
-        $.post("/commuter_data",
+        $.post("commuter_data",
             function (data) {
                 let labels = [];
                 let counts = [];
@@ -402,7 +402,7 @@ function showCommuterPieGraph() {
 
 function showAcademicPieChart() {
     {
-        $.post("/academic_data",
+        $.post("academic_data",
             function (data) {
                 console.log(data.data);
                 console.log((Object.keys((data.data))));
