@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,7 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c4d50d4-7ff1-4146-ba11-6c9e82c3ab58" name="Default Changelist" comment="fix the error">
+      <change afterPath="$PROJECT_DIR$/views/img/about.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/img/ppu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/img/result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/img/site.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +83,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views/img" />
       <recent name="$PROJECT_DIR$/documentation" />
     </key>
   </component>
@@ -121,6 +130,7 @@
       <workItem from="1618601223475" duration="351000" />
       <workItem from="1618607594398" duration="13064000" />
       <workItem from="1619140117291" duration="1803000" />
+      <workItem from="1619451108578" duration="4005000" />
     </task>
     <task id="LOCAL-00001" summary="fix the error">
       <created>1617053602663</created>
