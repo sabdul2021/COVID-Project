@@ -296,9 +296,9 @@ function showBarGraph() {
                     labels: ["Exposure ", "Test Result ", "Quarantine Status "],
                     datasets: [{
                         label: ["Exposure ", "Test Result ", "Quarantine Status "],
-                        backgroundColor: ['#fae902', '#109426', '#f5ca0c'],
-                        borderColor: ['#fae902', '#109426', '#f5ca0c'],
-                        hoverBorderColor: ['#fae902', '#109426', '#f5ca0c'],
+                        backgroundColor: ['#9a8f0d', '#109426', '#f5ca0c'],
+                        borderColor: ['#9a8f0d', '#109426', '#f5ca0c'],
+                        hoverBorderColor: ['#9a8f0d', '#109426', '#f5ca0c'],
                         data: [exposure, testResult, quarantineStatus],
                     }]
                 };
@@ -427,9 +427,9 @@ function showAcademicPieChart() {
                     labels: ["Undergraduate", "Graduate", "Faculty", "Staff"],
                     datasets: [{
                         label: ["Undergraduate", "Graduate", "Faculty", "Staff"],  //yellow, green, golden, and sage green
-                        backgroundColor: ['#fae902','#fae902', '#f5ca0c', '#6df27a'],
-                        borderColor: ['#fae902','#fae902', '#f5ca0c', '#6df27a'],
-                        hoverBorderColor: ['#fae902','#fae902', '#f5ca0c', '#6df27a'],
+                        backgroundColor: ['#9a8f0d','#076505', '#f5ca0c', '#6df27a'],
+                        borderColor: ['#9a8f0d','#076505', '#f5ca0c', '#6df27a'],
+                        hoverBorderColor: ['#9a8f0d','#076505', '#f5ca0c', '#6df27a'],
                         data: [underGrad, grad, faculty, staff],
                     }]
                 };
