@@ -23,7 +23,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/exposure",
+        url: "exposure",
         success: function (json) {
             console.log(json);
         },
@@ -34,7 +34,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/test_results",
+        url: "test_results",
         success: function (json) {
             console.log(json);
         },
@@ -45,7 +45,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/quarantine_status",
+        url: "quarantine_status",
         success: function (json) {
             console.log(json);
         },
@@ -56,7 +56,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/exposure_timeline",
+        url: "exposure_timeline",
         success: function (json) {
             console.log(json);
         },
@@ -67,7 +67,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/table_data",
+        url: "table_data",
         success: function (json) {
             console.log(json);
         },
@@ -78,7 +78,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/academic_data",
+        url: "academic_data",
         success: function (json) {
             console.log(json);
         },
@@ -89,7 +89,7 @@ $(function () {
 
     $.ajax({
         type: "GET",
-        url: "/commuter_data",
+        url: "commuter_data",
         success: function (json) {
             console.log(json);
         },
