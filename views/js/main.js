@@ -296,9 +296,9 @@ function showBarGraph() {
                     labels: ["Exposure ", "Test Result ", "Quarantine Status "],
                     datasets: [{
                         label: ["Exposure ", "Test Result ", "Quarantine Status "],
-                        backgroundColor: ['#0C82F7', '#95F308', '#F36E08'],
-                        borderColor: ['#0C82F7'],
-                        hoverBorderColor: ['#0C82F7', '#95F308', '#F36E08'],
+                        backgroundColor: ['#fae902', '#109426', '#f5ca0c'],
+                        borderColor: ['#fae902', '#109426', '#f5ca0c'],
+                        hoverBorderColor: ['#fae902', '#109426', '#f5ca0c'],
                         data: [exposure, testResult, quarantineStatus],
                     }]
                 };
@@ -335,9 +335,9 @@ function showLineGraph() {
                     labels: today,
                     datasets: [{
                         label: 'Exposure',
-                        backgroundColor: '#F36E08',
-                        borderColor: '#46d5f1',
-                        hoverBorderColor: '#666666',
+                        backgroundColor: '#09ea2d', //green
+                        borderColor: '#0b821e',
+                        hoverBorderColor: '#67a067',
                         data: exposure,
                     }]
                 };
@@ -382,12 +382,12 @@ function showCommuterPieGraph() {
                 }
 
                 let chartdata = {
-                    labels: ["Non-Commuter", "Commuter"],
+                    labels: [ "Commuter", "Non-Commuter"],
                     datasets: [{
                         label: labels,
-                        backgroundColor: ["#009cff", "#ff0000"],
-                        borderColor: ["#009aff", "#ff0000"],
-                        hoverBorderColor: ["#009cff", "#ff0000"],
+                        backgroundColor: ["#fae902", "#109426"], //yellow then green
+                        borderColor: ["#fae902", "#109426"],
+                        hoverBorderColor: ["#fae902", "#109426"],
                         data: counts
                     }]
                 };
@@ -426,10 +426,10 @@ function showAcademicPieChart() {
                 let chartdata = {
                     labels: ["Undergraduate", "Graduate", "Faculty", "Staff"],
                     datasets: [{
-                        label: ["Undergraduate", "Graduate", "Faculty", "Staff"],
-                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9"],
-                        borderColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9"],
-                        hoverBorderColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9"],
+                        label: ["Undergraduate", "Graduate", "Faculty", "Staff"],  //yellow, green, golden, and sage green
+                        backgroundColor: ['#fae902','#fae902', '#f5ca0c', '#6df27a'],
+                        borderColor: ['#fae902','#fae902', '#f5ca0c', '#6df27a'],
+                        hoverBorderColor: ['#fae902','#fae902', '#f5ca0c', '#6df27a'],
                         data: [underGrad, grad, faculty, staff],
                     }]
                 };
